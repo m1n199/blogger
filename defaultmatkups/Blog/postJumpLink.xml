@@ -1,0 +1,11 @@
+<b:includable id='postJumpLink'>
+    <b:comment>Overridden, and migrated to postFooter. Called as postFooterJumpLink.</b:comment>
+</b:includable>
+
+
+
+<b:includable id='postJumpLink' var='post'>
+    <b:if cond='data:blog.jumpLinkMessage != &quot;hide&quot;'>
+    <a class='read-more' expr:href='data:post.url.canonical'><data:blog.jumpLinkMessage/></a>
+    </b:if>
+    </b:includable>

@@ -1,0 +1,4 @@
+<b:includable id='postTimestamp' var='post'>
+    <!-- Post Timestamp -->
+    <span class='entry-time mi'><b:if cond='data:allBylineItems.author and data:allBylineItems.timestamp.label'><span class='sp'><data:allBylineItems.timestamp.label/></span></b:if><time class='published' expr:datetime='data:post.date.iso8601'><data:post.date/></time></span>
+    </b:includable>

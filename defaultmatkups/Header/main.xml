@@ -1,0 +1,17 @@
+ <b:includable id='main' var='this'>
+    <b:include cond='data:imagePlacement in {&quot;REPLACE&quot;, &quot;BEFORE_DESCRIPTION&quot;}' name='image'/>
+    <b:include cond='data:imagePlacement == &quot;BEHIND&quot;' name='title'/>
+    <b:include cond='data:imagePlacement != &quot;REPLACE&quot;' name='description'/>
+    </b:includable>
+
+
+<b:includable id='main' var='this'>
+   <div class='header-widget'>
+      <b:include cond='data:imagePlacement in {&quot;REPLACE&quot;, &quot;BEFORE_DESCRIPTION&quot;}' name='image'/>
+      <b:include cond='data:imagePlacement not in {&quot;REPLACE&quot;, &quot;BEFORE_DESCRIPTION&quot;}' name='title'/>
+      <b:include cond='data:imagePlacement != &quot;REPLACE&quot;' name='description'/>
+      </div>
+   </b:includable>
+
+
+      

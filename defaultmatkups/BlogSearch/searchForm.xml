@@ -1,0 +1,11 @@
+<b:includable id='searchForm'>
+    <form class='search-form' expr:action='data:blog.searchUrl'>
+        <b:attr cond='!data:view.isPreview' name='target' value='_top'/>
+        <b:include name='urlParamsAsFormInput'/>
+        <input autocomplete='off' class='search-input' expr:aria-label='data:messages.search' expr:placeholder='data:messages.search' name='q' type='search' value=''/>
+        <b:include name='searchSubmit'/>
+        </form>
+    </b:includable>
+<b:includable id='searchSubmit'>
+    <input class='search-action btn' expr:value='data:messages.ok' type='submit'/>
+    </b:includable>

@@ -1,0 +1,37 @@
+<b:includable id='sharingButton'><b:comment>Replaced</b:comment>  </b:includable>
+<b:includable id='sharingButtonContent'><b:comment>Replaced</b:comment>  </b:includable>
+<b:includable id='sharingButtons'><b:comment>Replaced</b:comment>  </b:includable>
+<b:includable id='sharingButtonsMenu'><b:comment>Replaced</b:comment>  </b:includable>
+<b:includable id='sharingPlatformIcon'><b:comment>Replaced</b:comment>  </b:includable>
+<b:includable id='threadedCommentForm' var='post'><b:comment>Replaced</b:comment>  </b:includable>
+<b:includable id='threadedCommentJs' var='post'><b:comment>Replaced</b:comment>  </b:includable>
+<b:includable id='threadedComments' var='post'><b:comment>Replaced</b:comment>  </b:includable>
+<b:includable id='threadedCommentsDisqus' var='post'><b:comment>Replaced</b:comment>  </b:includable>
+<b:includable id='postMetadataJSONImage'><b:comment>Replaced</b:comment>  </b:includable>
+<b:includable id='postReactions'><b:comment>Replaced</b:comment>  </b:includable>
+<b:includable id='postCommentsLink'><b:comment>Replaced</b:comment>  </b:includable>
+<b:includable id='postMetadataJSONPublisher'><b:comment>Replaced</b:comment>  </b:includable>
+<b:includable id='postLocation'><b:comment>Replaced</b:comment>  </b:includable>      
+<b:includable id='aboutPostAuthor'><b:comment>Replaced</b:comment>  </b:includable>
+<b:includable id='backLinks' var='post'><b:comment>Replaced</b:comment>  </b:includable>
+<b:includable id='blogThisShare'><b:comment>Replaced</b:comment>  </b:includable>
+<b:includable id='bylineByName' var='byline'><b:comment>Replaced</b:comment>  </b:includable>
+<b:includable id='bylineRegion' var='regionItems'><b:comment>Replaced</b:comment>  </b:includable>
+<b:includable id='commentItem' var='comment'><b:comment>Replaced</b:comment>  </b:includable>
+<b:includable id='commentList' var='comments'><b:comment>Replaced</b:comment>  </b:includable>
+<b:includable id='commentPicker' var='post'><b:comment>Replaced</b:comment>  </b:includable>
+<b:includable id='defaultAdUnit'><b:comment>Replaced</b:comment>  </b:includable>
+<b:includable id='emailPostIcon'><b:comment>Replaced</b:comment>  </b:includable>
+<b:includable id='facebookShare'><b:comment>Replaced</b:comment>  </b:includable>
+<b:includable id='feedLinks'><b:comment>Replaced</b:comment>  </b:includable>
+<b:includable id='feedLinksBody' var='links'><b:comment>Replaced</b:comment>  </b:includable>
+<b:includable id='footerBylines'><b:comment>Replaced</b:comment>  </b:includable>
+<b:includable id='googlePlusShare'><b:comment>Replaced</b:comment>  </b:includable>
+<b:includable id='inlineAd' var='post'><b:comment>Replaced</b:comment>  </b:includable>
+<b:includable id='homePageLink'><b:comment>Replaced</b:comment>  </b:includable>
+<b:includable id='iframeComments' var='post'><b:comment>Replaced</b:comment>  </b:includable>
+<b:includable id='linkShare'><b:comment>Replaced</b:comment>  </b:includable>
+<b:includable id='otherSharingButton'><b:comment>Replaced</b:comment>  </b:includable>
+<b:includable id='platformShare'><b:comment>Replaced</b:comment>  </b:includable>
+<b:includable id='commentAuthorAvatar'><b:comment>Replaced</b:comment>  </b:includable>
+<b:includable id='commentDeleteIcon' var='comment'><b:comment>Replaced</b:comment>  </b:includable>

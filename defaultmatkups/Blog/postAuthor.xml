@@ -1,0 +1,4 @@
+<b:includable id='postAuthor' var='post'>
+    <!-- Post Author -->
+    <span class='entry-author mi'><b:if cond='data:allBylineItems.author.label'><span class='by sp'><data:allBylineItems.author.label/></span></b:if><span class='author-name'><data:post.author.name/></span></span>
+    </b:includable>

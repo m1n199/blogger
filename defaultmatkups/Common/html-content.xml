@@ -1,0 +1,38 @@
+<b:includable id='html-content'>
+    <b:if cond='data:widget.sectionId == &quot;pbt-panel&quot;'>
+    <b:if cond='data:content != &quot;&quot;'>
+    <b:tag name='script' type='text/javascript'>
+    <b:with expr:value='data:content' var='option'>
+    <b:if cond='data:option.viewAllText'>var viewAllText = &quot;<data:option.viewAllText/>&quot;;</b:if>
+    <b:if cond='data:option.dateFormat'>var dateFormat = &quot;<data:option.dateFormat/>&quot;;</b:if>
+    <b:if cond='data:option.monthName'>
+    var monthNames = [&quot;<data:option.monthName.jan/>&quot;,&quot;<data:option.monthName.feb/>&quot;,&quot;<data:option.monthName.mar/>&quot;,&quot;<data:option.monthName.apr/>&quot;,&quot;<data:option.monthName.may/>&quot;,&quot;<data:option.monthName.jun/>&quot;,&quot;<data:option.monthName.jul/>&quot;,&quot;<data:option.monthName.aug/>&quot;,&quot;<data:option.monthName.sep/>&quot;,&quot;<data:option.monthName.oct/>&quot;,&quot;<data:option.monthName.nov/>&quot;,&quot;<data:option.monthName.dec/>&quot;];
+    </b:if>
+    </b:with>
+    </b:tag>
+    </b:if>
+    <b:elseif cond='data:widget.sectionId == &quot;x1c3a-related-posts&quot;'/>
+    <b:with value='data:title ? &quot;$title={&quot; + data:title + &quot;} &quot; : &quot;&quot;' var='relatedTitle'>
+    <b:attr expr:value='data:relatedTitle + (data:content contains &quot;results&quot; ? data:content : &quot;&quot;)' name='data-shortcode'/>
+    </b:with>
+    <b:else/>
+    <b:include name='widget-title'/>
+    <div class='widget-content'>
+    <b:if cond='data:title contains &quot;getMailchimp&quot;'>
+    <b:attr expr:value='data:title' name='data-shortcode'/>
+    <div class='mailchimp-header'>
+    <h3 class='mailchimp-title'><data:messages.subscribe/></h3>
+    <p class='mailchimp-text excerpt'><data:messages.getEmailNotifications/></p>
+    </div>
+    <div class='mailchimp-form'>
+    <form expr:action='data:content' expr:onsubmit='&quot;window.open(\&quot;&quot; + data:content + &quot;\&quot;, \&quot;popupwindow\&quot;, \&quot;scrollbars=yes,width=550,height=520\&quot;); return true&quot;' method='post' name='mc-embedded-subscribe-form' novalidate='' target='popupwindow'>
+    <input class='mailchimp-email-address' expr:aria-label='data:messages.emailAddress' expr:placeholder='data:messages.emailAddress' name='EMAIL' type='email' value=''/>
+    <input class='mailchimp-submit btn' expr:value='data:messages.subscribe' name='subscribe' type='submit'/>
+    </form>
+    </div>
+    <b:else/>
+    <data:content/>
+    </b:if>
+    </div>
+    </b:if>
+    </b:includable>

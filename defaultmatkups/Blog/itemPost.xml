@@ -1,0 +1,16 @@
+<b:includable id='itemPost' var='post'>
+    <!-- Item Post Content -->
+    <b:include data='post' name='postMeta'/>
+    <div class='item-post-inner flex-col'>
+    <div class='entry-header p-eh'>
+    <b:include data='post' name='postHeader'/>
+    </div>
+    <div class='entry-content-wrap flex-col'>
+    <b:include data='post' name='postBody'/>
+    <b:include cond='data:view.isPost and data:allBylineItems.labels' data='post' name='postLabels'/>
+    </div>
+    <b:include cond='data:view.isPost and data:allBylineItems.share' data='post' name='postShareButtons'/>
+    </div>
+    <b:include cond='data:view.isPost' data='post' name='postFooter'/>
+    </b:includable>
+

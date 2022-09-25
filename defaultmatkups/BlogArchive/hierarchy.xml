@@ -1,0 +1,8 @@
+<b:includable id='hierarchy'>
+    <b:include data='{ buttonClass: &quot;pill-button&quot;,
+                    limit: 1,
+                    items: data:this.data,
+                    itemSet: &quot;data&quot;,
+                    itemsMarkup: &quot;super.hierarchy&quot;}' 
+                name='extendableItems'/>
+    </b:includable>

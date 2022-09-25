@@ -1,0 +1,4 @@
+<b:includable id='postFeaturedImage' var='post'>
+    <!-- Post Featured Image -->
+    <a class='entry-thumbnail' expr:href='data:post.url.canonical' expr:title='data:post.title ? data:post.title : data:messages.noTitle'><b:if cond='data:post.featuredImage'><span class='thumbnail' expr:data-src='data:post.featuredImage.isYouTube ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl.jsonEscaped, 72, &quot;1:1&quot;) : resizeImage(data:post.featuredImage, 72, &quot;1:1&quot;)'/><b:else/><span class='thumbnail' data-src='https://resources.blogblog.com/img/blank.gif'/></b:if><b:class cond='data:post.featuredImage.isYouTube' name='is-ytimg'/><b:include cond='data:skin.vars.thumbtag == &quot;1px&quot; and (data:skin.vars.gridstyle == &quot;1px&quot;)' data='post' name='postCategory'/></a>
+    </b:includable>

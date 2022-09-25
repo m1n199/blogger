@@ -1,0 +1,17 @@
+<b:includable id='widget-title'>
+    <b:if cond='data:title == &quot;{ads}&quot;'>
+    <b:class name='is-ad'/>
+    <b:elseif cond='data:widget.type == &quot;AdSense&quot;'/>
+    <b:class name='is-ad'/>
+    </b:if>
+    <b:if cond='data:widget.type == &quot;HTML&quot; and data:title contains &quot;getMailchimp&quot;'>
+    <b:class name='MailChimp'/>
+    </b:if>
+    <b:if cond='data:defaultTitle or data:title'>
+    <b:if cond='data:title != &quot;{ads}&quot; and not (data:widget.type == &quot;HTML&quot; and data:title contains &quot;getMailchimp&quot;)'>
+    <b:if cond='data:widget.sectionId not in [&quot;pbt-panel&quot;,&quot;main-logo&quot;,&quot;x1c3a-main-menu&quot;,&quot;x1c3a-about-section&quot;,&quot;footer-copyright&quot;,&quot;footer-menu&quot;]'>
+    <div expr:class='data:widget.sectionId in [&quot;featured&quot;] ? &quot;main-title-wrap widget-title&quot; : (data:widget.sectionId in [&quot;sidebar&quot;] ? &quot;title-wrap widget-title&quot; : &quot;widget-title&quot;)'><h3 class='title'><data:title/></h3></div>
+    </b:if>
+    </b:if>
+    </b:if>
+    </b:includable>

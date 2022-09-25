@@ -1,0 +1,41 @@
+<b:includable id='headerByline'>
+    <b:include cond='data:view.isMultipleItems or data:widgets.Blog.first.headerByline.items.share' 
+        data='{ shareButtonClass: &quot;post-share-buttons-top&quot;, 
+                overridden: true }' 
+        name='maybeAddShareButtons'/>
+    <b:include name='super.headerByline' />
+    </b:includable>
+
+
+<b:includable id='headerByline' var='post'>
+    <!-- Post Entry Meta -->
+    <b:if cond='data:view.isMultipleItems'>
+    <b:if cond='data:allBylineItems.author or data:allBylineItems.timestamp'>
+    <div class='entry-meta'>
+    <b:class cond='data:skin.vars.gridstyle == &quot;1px&quot; and (data:skin.vars.summary == &quot;1px&quot;)' name='has-snip'/>
+    <b:include cond='data:allBylineItems.author' data='post' name='postAuthor'/>
+    <b:include cond='data:allBylineItems.timestamp' data='post' name='postTimestamp'/>
+    </div>
+    </b:if>
+    </b:if>
+    <b:if cond='data:view.isPost'>
+    <b:if cond='data:allBylineItems.author or data:allBylineItems.timestamp or data:allBylineItems.share'>
+    <b:class name='has-meta'/>
+    <div class='entry-meta'>
+    <div class='align-left'>
+    <b:class cond='data:allBylineItems.timestamp' name='has-time'/>
+    <b:if cond='data:allBylineItems.author'><span class='entry-avatar'><span class='avatar' expr:data-src='data:post.author.authorPhoto.image ? resizeImage(data:post.author.authorPhoto.image, 72, &quot;1:1&quot;) : &quot;https://1.bp.blogspot.com/-QN2lgvtYZco/YN3mUSryAVI/AAAAAAAAADs/KrR-etCcvUMcPl06jopTs9pzq59IAXhMQCLcBGAsYHQ/s72-c/avatar.jpg&quot;'/></span></b:if>
+    <b:tag class='al-items' cond='data:allBylineItems.author and data:allBylineItems.timestamp' name='div'>
+    <b:include cond='data:allBylineItems.author' data='post' name='postAuthor'/>
+    <b:include cond='data:allBylineItems.timestamp' data='post' name='postTimestamp'/>
+    </b:tag>
+    </div>
+    <b:if cond='data:allBylineItems.share'>
+    <div class='align-right'>
+    <button class='share-toggle btn' expr:aria-label='data:messages.share'/>
+    </div>
+    </b:if>
+    </div>
+    </b:if>
+    </b:if>
+    </b:includable>

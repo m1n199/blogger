@@ -1,0 +1,4 @@
+<b:includable id='postCategory' var='post'>
+    <!-- Post Label -->
+    <b:if cond='data:post.labels'><span class='entry-category'><data:post.labels.first.name/></span></b:if>
+    </b:includable>

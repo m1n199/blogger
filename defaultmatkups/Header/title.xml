@@ -1,0 +1,25 @@
+<b:includable id='title'>
+    <div><b:class cond='data:this.imagePlacement == &quot;REPLACE&quot;' name='replaced'/>
+        <b:include name='super.title'/>
+        </div>
+    </b:includable>
+
+
+<b:includable id='title'>
+    <b:tag class='blog-title' cond='data:view.isMultipleItems' name='h1'>
+        <b:tag class='blog-title' cond='!data:view.isMultipleItems' name='span'>
+            <b:tag expr:href='data:blog.homepageUrl.canonical' name='a'>
+                <data:title/>
+                </b:tag>
+            </b:tag>
+        </b:tag>
+    </b:includable>
+
+
+<b:includable id='title'>
+    <h1>
+        <b:tag cond='data:view.url != data:blog.homepageUrl' expr:href='data:blog.homepageUrl' name='a'>
+            <data:title/>
+        </b:tag>
+        </h1>
+    </b:includable>

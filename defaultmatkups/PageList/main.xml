@@ -1,0 +1,6 @@
+<b:includable id='main'>
+    <b:include name='widget-title'/>
+    <b:include name='content'/>
+    </b:includable>
+
+        

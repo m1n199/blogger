@@ -1,0 +1,14 @@
+<b:includable id='snippetedPostContent'>
+    <b:comment>Add a &#39;keep reading&#39; link to the item-content.</b:comment>
+    <b:include name='snippetedPostTitle'/>
+    <b:include name='snippetedPostByline'/>
+    <div class='item-content float-container'>
+    <b:include cond='data:this.postDisplay.showFeaturedImage and data:post.featuredImage' name='snippetedPostThumbnail'/>
+    <b:if cond='data:this.postDisplay.showSnippet'>
+        <b:with value='&quot;popular-posts&quot;' var='snippetPrefix'>
+        <b:include cond='data:post' data='post' name='postSnippet'/>
+        </b:with>
+    </b:if>
+    <b:include data='post' name='postFooterJumpLink'/>
+    </div>
+</b:includable>

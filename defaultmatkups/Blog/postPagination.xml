@@ -1,0 +1,8 @@
+<b:includable id='postPagination'>
+    <b:if cond='data:view.isPost'>
+    <div class='post-nav post-widget'>
+    <b:include name='previousPageLink'/>
+    <b:include name='nextPageLink'/>
+    </div>
+    </b:if>
+    </b:includable>

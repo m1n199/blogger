@@ -1,0 +1,27 @@
+<b:includable id='comments' var='post'>
+    <a name='comments'/>
+    <section class='comments threaded flex-col' expr:data-embed='data:post.embedCommentForm' expr:data-num-comments='data:post.numberOfComments' id='comments'>
+    <b:class expr:name='data:post.numberOfComments != 0 ? &quot;has-comments&quot; : &quot;no-comments&quot;'/>
+    <b:include name='commentsTitle'/>
+    <b:if cond='data:post.allowNewComments'>
+    <b:if cond='data:this.messages.blogComment'><p class='comments-message excerpt'><data:this.messages.blogComment/></p></b:if>
+    <b:else/>
+    <b:if cond='data:post.noNewCommentsText and (data:post.numberOfComments == 0)'><p class='comments-message no-new-comments excerpt'><data:post.noNewCommentsText/><em>*</em></p></b:if>
+    </b:if>
+    <b:if cond='data:post.embedCommentForm'>
+    <b:if cond='data:post.numberOfComments != 0'>
+    <div class='comments-content'>
+    <div id='comment-holder'>
+    <data:post.commentHtml/>
+    </div>
+    </div>
+    </b:if>
+    <b:if cond='data:post.allowNewComments'>
+    <b:include data='post' name='commentForm'/>
+    </b:if>
+    <b:if cond='!data:post.allowNewComments'><b:if cond='data:post.noNewCommentsText and (data:post.numberOfComments != 0)'><p class='comments-message no-new-comments excerpt'><data:post.noNewCommentsText/><em>*</em></p></b:if></b:if>
+    <b:else/>
+    <p class='comments-message excerpt'>Please Select Embedded Mode To Show The Comment System.<em>*</em></p>
+    </b:if>
+    </section>
+    </b:includable>

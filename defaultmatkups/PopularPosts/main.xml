@@ -1,0 +1,15 @@
+<b:includable id='main' var='this'>
+    <b:comment>Default the title to &#39;Popular posts from this blog&#39;.</b:comment>
+    <b:with value='data:messages.popularPostsFromThisBlog' var='defaultTitle'>
+        <b:include name='super.main'/>
+        </b:with>
+    </b:includable>
+
+<b:includable id='main' var='this'>
+    <b:include name='widget-title'/>
+    <div class='widget-content'>
+    <b:class name='side-items'/>
+    <b:loop index='i' values='data:posts' var='post'>
+    <b:include data='post' name='content'/>
+    </b:loop>
+    </div>

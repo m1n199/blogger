@@ -1,0 +1,32 @@
+<b:includable id='theme-variables'>
+    <b:tag name='script' type='text/javascript'>
+        var pbt = { 
+                    fixedMenu:<b:eval expr='data:skin.vars.fixedmenu == &quot;1px&quot; ? 
+                                            &quot;true&quot; 
+                                            : &quot;false&quot;'/>,
+                    fixedSidebar:<b:eval expr='data:skin.vars.fixedsidebar == &quot;1px&quot; ? 
+                                                &quot;true&quot; 
+                                                : &quot;false&quot;'/>,
+                    entryTag:<b:eval expr='data:skin.vars.entrytag == &quot;1px&quot; ?
+                                            &quot;true&quot; 
+                                            : &quot;false&quot;'/>,
+                    thumbTag:<b:eval expr='data:skin.vars.thumbtag == &quot;1px&quot; ?
+                                            &quot;true&quot; 
+                                            : &quot;false&quot;'/>,
+                    noTitle:&quot;<data:messages.noTitle/>&quot;,
+                    viewAll:&quot;<data:messages.viewAll/>&quot;,
+                    noResults:&quot;<data:messages.noResultsFound/>&quot;,
+                    postAuthor:<b:eval expr='data:widgets.Blog.first.allBylineItems.author ? 
+                                            &quot;true&quot; 
+                                            : &quot;false&quot;'/>,
+                    postAuthorLabel:&quot;<b:eval expr='data:widgets.Blog.first.allBylineItems.author.label ?
+                                                        data:widgets.Blog.first.allBylineItems.author.label 
+                                                        : &quot;&quot;'/>&quot;,
+                    postDate:<b:eval expr='data:widgets.Blog.first.allBylineItems.timestamp ?
+                                                        &quot;true&quot; 
+                                                        : &quot;false&quot;'/>,
+                    postDateLabel:&quot;<b:eval expr='data:widgets.Blog.first.allBylineItems.timestamp.label ?
+                                                    data:widgets.Blog.first.allBylineItems.timestamp.label 
+                                                    : &quot;&quot;'/>&quot;}
+        </b:tag>
+    </b:includable>

@@ -1,0 +1,3 @@
+<b:includable id='content'>
+    <b:include name='linklist-content'/>
+    </b:includable>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false' 
+      b:defaultwidgetversion='2' 
+      b:layoutsVersion='3' 
+      b:responsive='true' 
+      b:templateVersion='1.3.3' 
+      expr:dir='data:blog.languageDirection' 
+      expr:lang='data:blog.locale' 
+      xmlns='http://www.w3.org/1999/xhtml' 
+      xmlns:b='http://www.google.com/2005/gml/b' 
+      xmlns:data='http://www.google.com/2005/gml/data' 
+      xmlns:expr='http://www.google.com/2005/gml/expr'>
+  <head>
+    <b:include name='all_head_content'/>
+    <b:if cond='data:view.isLayoutMode'><b:template-skin>
+      <![CDATA[
+      .skip-navigation{display: none; visibility: hidden;}
+      ]]>
+      </b:template-skin>
+    <b:else/><b:skin version='1.0.0'> 
+      <![CDATA[ 
+      .skip-navigation{display: none; visibility: hidden;}
+      ]]>
+      </b:skin>
+      </b:if>
+   <b:defaultmarkups>
+      <b:defaultmarkup type="Common">
+        <b:includable id='toggle_body_class'>
+          <b:include name='skipNavigation'/>
+          <b:class cond='data:view.isMobile' name='is-mobile'/>
+          <b:class cond='data:view.isSingleItem' name='is-single'/>
+          <b:class cond='data:view.isMultipleItems' name='is-multiple'/>
+          <b:class cond='data:view.isError' name='is-error'/>
+          <b:class cond='data:view.isPage' name='is-page'/>
+          <b:class cond='data:view.isPost' name='is-post'/>
+          <b:class cond='data:view.isHomepage' name='is-home'/>
+          <b:class cond='data:view.isArchive' name='is-Archive'/>
+          <b:class cond='data:view.isSearch and !data:view.isLabelSearch' name='search-view'/>
+          <b:class cond='data:blog.isMobileRequest' name='is-mobileRequest'/>
+          </b:includable>
+        <b:includable id='all_head_content'>
+          <!-- <b:comment>meta tags</b:comment> -->
+          <meta expr:content='data:view.description.escaped' name='description'/>
+          <meta expr:content='&quot;text/html; charset=&quot; + data:blog.encoding' http-equiv='Content-Type'/>
+          <meta expr:content='data:skin.vars.main_color ? data:skin.vars.main_color : &quot;none&quot;' name='theme-color'/>
+          <meta expr:content='data:blog.localeUnderscoreDelimited' property='og:locale'/>
+          <b:if cond='data:view.isHomepage'>
+            <meta content='website' property='og:type'/>
+          <b:elseif cond='data:view.isSingleItem'/>
+            <meta content='article' property='og:type'/>
+          <b:elseif cond='data:view.isMultipleItems and not data:view.isHomepage'/>
+            <meta content='object' property='og:type'/>
+            </b:if>
+          <meta expr:content='data:blog.url.canonical' property='og:url'/>
+          <meta expr:content='data:view.title.escaped' property='og:title'/>
+          <meta expr:content='data:blog.title.escaped' property='og:site_name'/>
+          <meta expr:content='data:view.description.escaped' property='og:description'/>
+          <meta content='blogger' name='generator'/>
+          <b:if cond='data:blog.adultContent'><meta content='adult' name='rating' /></b:if>
+          <title><data:view.title.escaped/></title>
+          <!-- <b:include name='customOpenGraphMetaData'/> -->
+          <b:comment>Links</b:comment>
+          <link expr:href='data:blog.blogspotFaviconUrl' rel='icon' type='image/x-icon'/>
+          <link expr:href='data:view.url.canonical' rel='canonical'/>
+          <data:blog.feedLinks/>
+          <data:blog.meTag/>
+          <!-- <b:comment>Google - Analytics</b:comment> -->
+          <b:include data='blog' name='google-analytics' />
+          <!-- <b:comment>scripts</b:comment> -->
+          <b:tag name='script' cond='(data:widgets.AdSense.first or data:blog.adsenseClientId) and !data:blog.adsenseAutoAds' async='async' src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js' />
+          <b:tag name='script' async='async' src='https://www.gstatic.com/external_hosted/clipboardjs/clipboard.min.js' />
+          </b:includable>
+        </b:defaultmarkup>
+      </b:defaultmarkups>
+    </head>
+
+  <body>
+    <b:include name="toggle_body_class" />
+    <h2>heading - 2</h2>
+    
+    <b:section class='header' id='header' name='Header' showaddelement='true' tag='header' />
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js' type='text/javascript'/>
+    <!-- <b:include name='theme-variables'/> -->
+    <!-- Blogger Scripts -->
+  </body>
+</html>
+
+    
+    

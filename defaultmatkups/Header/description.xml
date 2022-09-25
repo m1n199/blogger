@@ -1,0 +1,5 @@
+<b:includable id='description'><b:comment>Replaced</b:comment>  </b:includable>
+
+<b:includable id='description'>
+    <p><data:this.description/></p>
+    </b:includable>

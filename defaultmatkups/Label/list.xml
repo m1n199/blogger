@@ -1,0 +1,27 @@
+<b:includable id='list'>
+    <b:include data='{ buttonClass: &quot;pill-button&quot;,
+                       items: data:this.labels,
+                       itemSet: &quot;labels&quot;,
+                       itemsMarkup: &quot;super.list&quot;}' 
+                name='extendableItems'/>
+    </b:includable>
+
+
+<b:includable id='list'>
+    <ul class='list-style'>
+        <b:loop values='data:labels' var='label'>
+            <li>
+                <a class='label-name' expr:href='data:label.url'>
+                    <b:if cond='data:this.showFreqNumbers'>
+                        <b:class name='has-count'/>
+                        <span class='label-count count-style'>(<data:label.count/>)</span>
+                        </b:if>
+                    <data:label.name/>
+                    </a>
+                </li>
+            </b:loop>
+        </ul>
+    </b:includable>
+
+
+

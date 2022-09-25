@@ -1,0 +1,9 @@
+<b:includable id='popular-content'>
+    <div expr:class='&quot;post item-&quot;+data:i'>
+    <a class='entry-thumbnail' expr:href='data:post.url.canonical' expr:title='data:post.title ? data:post.title : data:messages.noTitle'><b:if cond='data:post.featuredImage'><span class='thumbnail' expr:data-src='data:post.featuredImage.isYouTube ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl.jsonEscaped, 72, &quot;1:1&quot;) : resizeImage(data:post.featuredImage, 72, &quot;1:1&quot;)'/><b:else/><span class='entry-thumbnail' data-src='https://resources.blogblog.com/img/blank.gif'/></b:if><b:class cond='data:post.featuredImage.isYouTube' name='sz-4 is-ytimg'/><span class='entry-index'><b:eval expr='data:i + 1'/></span></a>
+    <div class='entry-header'>
+    <h2 class='entry-title'><a expr:href='data:post.url.canonical' expr:title='data:post.title ? data:post.title : data:messages.noTitle'><b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/></a></h2>
+    <b:if cond='data:widgets.Blog.first.allBylineItems.timestamp'><div class='entry-meta'><span class='entry-time'><time class='published' expr:datetime='data:post.date.iso8601'><data:post.date/></time></span></div></b:if>
+    </div>
+    </div>
+    </b:includable>

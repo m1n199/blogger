@@ -1,0 +1,3 @@
+<b:includable id='addComments'>
+    <a expr:href='data:post.commentsUrl' expr:onclick='data:post.commentsUrlOnclick'><data:messages.postAComment/></a>
+    </b:includable>

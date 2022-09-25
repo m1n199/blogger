@@ -1,0 +1,18 @@
+<b:includable id='postCommentsAndAd' var='post'>
+    <!-- In-Feed Ads -->
+    <b:include cond='data:view.isMultipleItems and not data:view.search.label and not data:view.search.query and not data:view.isArchive' data='post' name='inlineAd'/>
+    <article>
+    <b:class cond='data:view.isMultipleItems' expr:name='data:skin.vars.gridstyle == &quot;1px&quot; ? &quot;post hentry item-&quot; + data:i : &quot;post hentry item-&quot; + data:i'/>
+    <b:class cond='data:view.isSingleItem' name='item-post hentry flex-col'/>
+    <b:include data='post' name='post'/>
+    </article>
+    <b:if cond='data:view.isSingleItem and data:post.allowComments'>
+    <!-- Post Comments -->
+    <div class='x1c3a-blog-post-comments post-widget' expr:data-shortcode='data:allBylineItems.comments.label contains &quot;type&quot; ? data:allBylineItems.comments.label : &quot;$type={blogger}&quot;'>
+    <b:include data='post' name='threadedCommentsDisqus'/>
+    <b:include data='post' name='comments'/>
+    </div>
+    </b:if>
+    <!-- Post Navigation -->
+    <b:include cond='data:skin.vars.postnav == &quot;1px&quot;' name='postPagination'/>
+    </b:includable>

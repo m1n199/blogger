@@ -1,0 +1,7 @@
+<b:includable id='content'>
+    <div class='widget-content'>
+    <b:class name='archive-list'/>
+    <b:include cond='data:this.style in {&quot;FLAT&quot;, &quot;MENU&quot;, &quot;HIERARCHY&quot;}' name='flat'/>
+    </div>
+    </b:includable>
+        

@@ -1,0 +1,10 @@
+<b:includable id='indexPost' var='post'>
+    <!-- Index Post Content -->
+    <b:include data='post' name='postFeaturedImage'/>
+    <div class='entry-header'>
+    <b:include cond='data:skin.vars.entrytag == &quot;1px&quot; and (data:skin.vars.gridstyle != &quot;1px&quot;)' data='post' name='postCategory'/>
+    <b:include data='post' name='postHeader'/>
+    <b:include cond='data:skin.vars.summary == &quot;1px&quot;' data='post' name='postBodySnippet'/>
+    <b:include data='post' name='headerByline'/>
+    </div>
+    </b:includable>

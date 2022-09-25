@@ -1,0 +1,7 @@
+ <b:includable id='main'>
+    <b:include name='widget-title'/>
+    <b:include name='content'/>
+    </b:includable>
+<b:includable id='content'>
+    <b:include name='searchForm'/>
+    </b:includable>    

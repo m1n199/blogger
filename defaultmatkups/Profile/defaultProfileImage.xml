@@ -1,0 +1,9 @@
+<b:includable id='defaultProfileImage'>
+    <div class='default-avatar-wrapper'>
+    <b:include data='{ iconClass: &quot;avatar-icon&quot; }' name='defaultAvatarIcon'/>
+    </div>
+    </b:includable>
+
+<b:includable id='defaultProfileImage' var='this'>
+    <img class='profile-img' expr:alt='data:messages.myPhoto' src='https://1.bp.blogspot.com/-QN2lgvtYZco/YN3mUSryAVI/AAAAAAAAADs/KrR-etCcvUMcPl06jopTs9pzq59IAXhMQCLcBGAsYHQ/w50-h50-p-k-no-nu/avatar.jpg'/>
+    </b:includable>

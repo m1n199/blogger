@@ -1,0 +1,8 @@
+<b:includable id='userProfileInfo' var='this'>
+    <div class='profile-info'>
+    <dl class='profile-datablock'>
+    <b:include name='userProfileData'/>
+    </dl>
+    <b:include name='viewProfileLink'/>
+    </div>
+    </b:includable>

@@ -1,0 +1,20 @@
+<b:includable id='nextPageLink'>
+    <a class = 'blog-pager-older-link flat-button ripple' 
+       expr:href='data:olderPageUrl' 
+       expr:title='data:messages.morePosts'>
+      <data:messages.morePosts/>
+      </a>
+    </b:includable>
+
+
+<b:includable id='nextPageLink'>
+    <b:if cond='data:olderPageUrl'>
+    <a class='post-nav-link post-nav-older-link' expr:href='data:olderPageUrl.canonical'>
+    <b:include data='{ message: &quot;nextPost&quot; }' name='theme-custom-lang'/>
+    </a>
+    <b:else/>
+    <span class='post-nav-link post-nav-older-link'>
+    <b:include data='{ message: &quot;nextPost&quot; }' name='theme-custom-lang'/>
+    </span>
+    </b:if>
+    </b:includable>

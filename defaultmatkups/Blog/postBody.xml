@@ -1,0 +1,6 @@
+<b:includable id='postBody' var='post'>
+    <!-- Post Body Entry Content-->
+    <div class='post-body entry-content' id='post-body'>
+    <data:post.body/>
+    </div>
+    </b:includable>

@@ -1,0 +1,45 @@
+<b:includable id='linklist-content'>
+    <b:if cond='data:widget.sectionId in [&quot;sidebar&quot;,&quot;x1c3a-about-section&quot;]'>
+    <b:tag class='widget-content' cond='data:widget.sectionId not in [&quot;x1c3a-about-section&quot;]' name='div'>
+    <b:if cond='data:links any l =&gt; l.name contains &quot;getSocial&quot;'>
+    <b:if cond='data:widget.sectionId == &quot;sidebar&quot;'>
+    <ul class='social-icons social sb-a'>
+    <b:loop values='data:links' var='link'>
+    <b:if cond='!(data:link.name contains &quot;getSocial&quot;)'>
+        <li expr:class='data:link.name'><a data-side='true' expr:alt='data:link.name' expr:class='&quot;fa-&quot; + data:link.name + &quot; btn&quot;' expr:href='data:link.target' expr:title='data:link.name' rel='noopener noreferrer' target='_blank'/></li>
+    </b:if>
+    </b:loop>
+    </ul>
+    <b:else/>
+    <ul class='social-icons social sb-h'>
+    <b:loop values='data:links' var='link'>
+    <b:if cond='!(data:link.name contains &quot;getSocial&quot;)'>
+        <li expr:class='data:link.name'><a expr:alt='data:link.name' expr:class='&quot;fa-&quot; + data:link.name + &quot; btn&quot;' expr:href='data:link.target' expr:title='data:link.name' rel='noopener noreferrer' target='_blank'/></li>
+    </b:if>
+    </b:loop>
+    </ul>
+    </b:if>
+    <b:else/>
+    <ul class='link-list list-style'>
+    <b:loop values='data:links' var='link'>
+    <li><a expr:href='data:link.target'><data:link.name/></a></li>
+    </b:loop>
+    </ul>
+    </b:if>
+    </b:tag>
+    <b:elseif cond='data:widget.sectionId == &quot;x1c3a-main-menu&quot;'/>
+    <ul class='main-nav' id='main-nav'>
+    <b:loop index='i' values='data:links' var='link'>
+    <li expr:id='&quot;item-&quot; + data:i'><a expr:href='data:link.target'><data:link.name/></a></li>
+    </b:loop>
+    </ul>
+    <b:else/>
+    <b:tag class='widget-content' cond='data:widget.sectionId not in [&quot;footer-menu&quot;]' name='div'>
+    <ul expr:class='data:widget.sectionId in [&quot;footer-menu&quot;] ? &quot;link-list&quot; : &quot;link-list list-style&quot;'>
+    <b:loop values='data:links' var='link'>
+    <li><a expr:href='data:link.target'><data:link.name/></a></li>
+    </b:loop>
+    </ul>
+    </b:tag>
+    </b:if>
+    </b:includable>

@@ -1,0 +1,26 @@
+<b:includable id='main' var='this'>
+    <details class='collapsible extendable'>
+    <b:attr cond='data:view.isLabelSearch' name='open' value='open'/>
+    <b:with value='true' var='renderAsDetails'>
+    <b:with value='data:messages.labels' var='defaultTitle'>
+        <b:include name='super.main'/>
+    </b:with>
+    </b:with>
+    </details>
+    </b:includable>
+
+
+<b:includable id='main' var='this'>
+    <b:include name='widget-title'/>
+    <b:include name='content'/>
+    </b:includable>
+
+
+<b:includable id='main' var='this'>
+      <b:include name='widget-title'/>
+      <b:include name='content'/>
+    </b:includable>
+
+
+
+    

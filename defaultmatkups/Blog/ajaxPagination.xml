@@ -1,0 +1,12 @@
+<b:includable id='ajaxPagination'>
+    <!-- Ajax Pagination on Index -->
+    <div class='blog-pager' id='blog-pager'>
+    <b:if cond='data:olderPageUrl'>
+    <a class='blog-pager-older-link load-more btn' expr:data-load='data:olderPageUrl.canonical' href='#' id='x1c3a-load-more-link'><b:include data='{ message: &quot;loadMorePosts&quot; }' name='theme-custom-lang'/></a>
+    <span class='loading'><div class='loader'/></span>
+    <span class='no-more load-more btn'><data:messages.noResultsFound/></span>
+    <b:else/>
+    <span class='no-more load-more btn show'><data:messages.noResultsFound/></span>
+    </b:if>
+    </div>
+    </b:includable>

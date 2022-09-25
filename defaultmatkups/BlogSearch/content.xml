@@ -1,0 +1,4 @@
+<b:includable id='content'>
+    <b:include name='searchForm'/>
+    </b:includable>
+

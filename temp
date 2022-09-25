@@ -1,0 +1,11 @@
+        <b:includable id='all_head_content'>
+          <meta name='viewport' content='width=device-width, initial-scale=1'/>
+          <title><data:view.title.escaped/></title>
+          <b:include name='all-head-content' data='blog'/>
+          <b:if cond='(data:widgets.AdSense.first or data:blog.adsenseClientId) and not data:blog.adsenseAutoAds'>
+            <script async='async' src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'/>
+            </b:if>
+          <b:include data='blog' name='google-analytics'/>
+          <b:tag name="script" async='async' expr:src='https://www.gstatic.com/external_hosted/clipboardjs/clipboard.min.js'>
+          </b:includable>
+        

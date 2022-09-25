@@ -1,0 +1,39 @@
+<b:includable id='postShareButtons' var='post'>
+    <b:comment>We call super.postShareButtons from the migrated positions.</b:comment>
+    </b:includable>
+
+
+<b:includable id='postShareButtons' var='post'>
+    <!-- Post Share Buttons & Modal -->
+    <div class='post-share'>
+    <ul class='share-a social sb-a'>
+    <li class='share-label'><span class='sl-btn btn'><i class='sl-ico'/></span></li>
+    <li class='facebook has-span'><a class='fa-facebook btn pbt-window' data-height='500' data-width='520' expr:data-url='&quot;https://www.facebook.com/sharer.php?u=&quot; + data:post.url.canonical' href='#' rel='noopener noreferrer' title='Facebook'><span>Facebook</span></a></li>
+    <li class='twitter has-span'><a class='fa-twitter btn pbt-window' data-height='520' data-width='860' expr:data-url='&quot;https://twitter.com/intent/tweet?url=&quot; + data:post.url.canonical + &quot;&amp;text=&quot; + data:post.title.jsEscaped' href='#' rel='noopener noreferrer' title='Twitter'><span>Twitter</span></a></li>
+    <li class='whatsapp'><a class='fa-whatsapp btn pbt-window' data-height='520' data-width='860' expr:data-url='&quot;https://api.whatsapp.com/send?text=&quot; + data:post.title.jsEscaped + &quot; | &quot; + data:post.url.canonical' href='#' rel='noopener noreferrer' title='WhatsApp'/></li>
+    <li class='email'><a class='fa-email btn pbt-window' data-height='500' data-width='520' expr:data-url='&quot;mailto:?subject=&quot; + data:post.title.jsEscaped + &quot;&amp;body=&quot; + data:post.url.canonical' href='#' rel='noopener noreferrer' title='Email'/></li>
+    <li class='show-more'><button class='btn' expr:aria-label='data:messages.showMore'/></li>
+    </ul>
+    <div class='share-modal'>
+    <div class='modal-inner'>
+    <div class='modal-header'>
+    <span class='modal-thumb entry-thumbnail'><b:if cond='data:post.featuredImage'><span class='thumbnail' expr:data-src='data:post.featuredImage.isYouTube ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl.jsonEscaped, 72, &quot;1:1&quot;) : resizeImage(data:post.featuredImage, 72, &quot;1:1&quot;)'/><b:else/><span class='entry-thumbnail' data-src='https://resources.blogblog.com/img/blank.gif'/></b:if><b:class cond='data:post.featuredImage.isYouTube' name='sz-5 is-ytimg'/></span>
+    <span class='modal-title'><span class='strong'><data:messages.share/>:</span><span class='title'><b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/></span></span>
+    </div>
+    <ul class='share-b social sb-a'>
+    <li class='facebook'><a class='fa-facebook btn pbt-window' data-height='500' data-width='520' expr:data-url='&quot;https://www.facebook.com/sharer.php?u=&quot; + data:post.url.canonical' href='#' rel='noopener noreferrer' title='Facebook'><span>Facebook</span></a></li>
+    <li class='twitter'><a class='fa-twitter btn pbt-window' data-height='520' data-width='860' expr:data-url='&quot;https://twitter.com/intent/tweet?url=&quot; + data:post.url.canonical + &quot;&amp;text=&quot; + data:post.title.jsEscaped' href='#' rel='noopener noreferrer' title='Twitter'><span>Twitter</span></a></li>
+    <li class='whatsapp'><a class='fa-whatsapp btn pbt-window' data-height='520' data-width='860' expr:data-url='&quot;https://api.whatsapp.com/send?text=&quot; + data:post.title.jsEscaped + &quot; | &quot; + data:post.url.canonical' href='#' rel='noopener noreferrer' title='WhatsApp'><span>WhatsApp</span></a></li>
+    <li class='pinterest-p'><a class='fa-pinterest-p btn pbt-window' data-height='520' data-width='860' expr:data-url='&quot;https://www.pinterest.com/pin/create/button/?url=&quot; + data:post.url.canonical + &quot;&amp;media=&quot; + data:post.featuredImage + &quot;&amp;description=&quot; + data:post.title.jsEscaped' href='#' rel='noopener noreferrer' title='Pinterest'><span>Pinterest</span></a></li>
+    <li class='linkedin'><a class='fa-linkedin-in btn pbt-window' data-height='520' data-width='860' expr:data-url='&quot;https://www.linkedin.com/shareArticle?mini=true&amp;url=&quot; + data:post.url.canonical + &quot;&amp;title=&quot; + data:post.title.jsEscaped' href='#' rel='noopener noreferrer' title='LinkedIn'><span>LinkedIn</span></a></li>
+    <li class='reddit'><a class='fa-reddit-alien btn pbt-window' data-height='520' data-width='860' expr:data-url='&quot;https://reddit.com/submit?url=&quot; + data:post.url.canonical + &quot;&amp;title=&quot; + data:post.title.jsEscaped' href='#' rel='noopener noreferrer' title='Reddit'><span>Reddit</span></a></li>
+    <li class='tumblr'><a class='fa-tumblr btn pbt-window' data-height='520' data-width='860' expr:data-url='&quot;https://www.tumblr.com/share/link?url=&quot; + data:post.url.canonical + &quot;&amp;name=&quot; + data:post.title.jsEscaped' href='#' rel='noopener noreferrer' title='Tumblr'><span>Tumblr</span></a></li>
+    <li class='telegram'><a class='fa-telegram-plane btn pbt-window' data-height='520' data-width='860' expr:data-url='&quot;https://telegram.me/share/url?url=&quot; + data:post.url.canonical + &quot;&amp;text=&quot; + data:post.title.jsEscaped' href='#' rel='noopener noreferrer' title='Telegram'><span>Telegram</span></a></li>
+    <li class='email'><a class='fa-email btn pbt-window' data-height='500' data-width='520' expr:data-url='&quot;mailto:?subject=&quot; + data:post.title.jsEscaped + &quot;&amp;body=&quot; + data:post.url.canonical' href='#' rel='noopener noreferrer' title='Email'><span>Email</span></a></li>
+    </ul>
+    </div>
+    <button class='hide-modal' expr:aria-label='data:messages.showLess'/>
+    </div>
+    <b:tag class='overlay' id='share-overlay' name='div'/>
+    </div>
+    </b:includable>

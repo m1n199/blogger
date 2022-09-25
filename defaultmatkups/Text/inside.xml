@@ -1,0 +1,3 @@
+<b:includable id='inside'>
+    <div class='into'><data:post.title/></div>
+    </b:includable>

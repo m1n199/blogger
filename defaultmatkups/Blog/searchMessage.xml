@@ -1,0 +1,43 @@
+<b:includable id='searchMessage'>
+    <!-- Search Message -->
+    <b:if cond='data:posts.empty'>
+    <b:class name='no-posts'/>
+    </b:if>
+    <b:if cond='data:view.search.query'>
+    <div class='queryMessage'>
+    <b:if cond='data:posts.empty'>
+    <span class='query-info query-error'>&quot;<data:view.search.query/>&quot;</span>
+    <b:else/>
+    <span class='query-info query-success'>&quot;<data:view.search.query/>&quot;</span>
+    </b:if>
+    </div>
+    </b:if>
+    <b:if cond='data:view.search.label'>
+    <div class='queryMessage '>
+    <b:if cond='data:posts.empty'>
+    <span class='query-info query-label query-error'><data:view.search.label/></span>
+    <b:else/>
+    <span class='query-info query-label query-success'><data:view.search.label/></span>
+    </b:if>
+    </div>
+    </b:if>
+    <b:if cond='data:view.isArchive'>
+    <div class='queryMessage'>
+    <b:if cond='data:posts.empty'>
+    <span class='query-info query-error'><data:view.archive.rangeMessage/></span>
+    <b:else/>
+    <span class='query-info query-success'><data:view.archive.rangeMessage/></span>
+    </b:if>
+    </div>
+    </b:if>
+    <b:if cond='data:view.isError'>
+    <div class='errorWrap'>
+    <h3>404</h3>
+    <h4><data:messages.theresNothingHere/></h4>
+    <p><data:navMessage/></p>
+    <a class='homepage btn' expr:href='data:blog.homepageUrl'><data:messages.home/></a>
+    </div>
+    </b:if>
+    <b:if cond='data:view.isMultipleItems and data:posts.empty'><div class='queryEmpty'><data:messages.noResultsFound/></div></b:if>
+    </b:includable>
+

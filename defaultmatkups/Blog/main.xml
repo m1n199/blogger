@@ -1,0 +1,37 @@
+<b:includable id='main'>
+    <b:include name='noContentPlaceholder'/>
+    <b:comment>Cap the total number of ads (widgets and inline ads).</b:comment>
+    <b:with value='3' var='maxNumAds'>
+        <b:with value='data:widgets.AdSense.size' var='numDesktopAds'>
+            <b:with value='data:widgets.AdSense count (w =&gt; w.sectionId != &quot;ads&quot;)' var='numMobileAds'>
+                <b:comment>Filter out the featured post, but only on the homepage.</b:comment>
+                <b:with value='data:widgets.FeaturedPost filter (w =&gt; w.sectionId == &quot;page_body&quot;) map (w =&gt; w.postId)' var='featuredPostIds'>
+                    <b:with value='data:view.isHomepage ? 
+                                    data:posts filter (post =&gt; post.id not in data:featuredPostIds) 
+                                    : data:posts' var='posts'>
+                        <b:include name='super.main'/>
+                        </b:with>
+                    </b:with>
+                </b:with>
+            </b:with>
+        </b:with>
+    </b:includable>
+
+
+
+<b:includable id='main' var='this'>
+    <b:class cond='data:view.isMultipleItems' name='index-blog flex-col'/>
+    <b:include cond='data:view.isHomepage' name='blogPostsTitle'/>
+    <b:include name='searchMessage'/>
+    <b:if cond='!data:posts.empty'>
+        <div class='blog-posts'>
+            <b:class cond='data:view.isMultipleItems' expr:name='data:skin.vars.gridstyle == &quot;1px&quot; ? &quot;index-post-wrap grid-items&quot; : &quot;index-post-wrap list-items&quot;'/>
+            <b:class cond='data:view.isSingleItem' name='item-post-wrap flex-col'/>
+            <b:loop index='i' values='data:posts' var='post'>
+                <b:include data='post' name='postCommentsAndAd'/>
+                </b:loop>
+            </div>
+        <b:include cond='data:view.isMultipleItems' name='ajaxPagination'/>
+        </b:if>
+    <b:include name='feedLinks'/>
+    </b:includable>

@@ -1,0 +1,34 @@
+<b:includable id='image'>
+    <b:include name='super.image'/>
+    <b:comment>If we are replacing the title, force it to render anyway, and it&#39;ll be hidden in CSS.</b:comment>
+    <b:include cond='data:this.imagePlacement == &quot;REPLACE&quot;' name='title'/>
+    </b:includable>
+
+
+
+<b:includable id='image'>
+    <a class='logo-img' 
+       expr:href='data:blog.homepageUrl.canonical'>
+    <img expr:alt='data:blog.title.escaped' 
+         expr:height='data:height' 
+         expr:src='data:image' 
+         expr:title='data:blog.title.escaped'
+         expr:width='data:width'/>
+    <b:if cond='data:view.isMultipleItems'>
+        <b:if cond='data:widget.sectionId == &quot;main-logo&quot;'>
+            <h1 id='h1-off'><data:title/></h1>
+            </b:if>
+        </b:if>
+    </a>
+    </b:includable>
+
+
+    <b:includable id='image'>
+      <a class='header-brand' 
+         expr:href='data:blog.homepageUrl'>
+        <img expr:alt='data:blog.title.escaped' 
+             expr:data-height='data:height' 
+             expr:data-width='data:width' 
+             expr:src='data:image'/>
+        </a>
+    </b:includable>

@@ -1,0 +1,3 @@
+<b:includable id='commentFormIframeSrc' var='post'>
+    <a expr:href='data:post.commentFormIframeSrc + &quot;&amp;skin=soho&quot;' id='comment-editor-src' rel='noopener noreferrer' title='Comment Form Link'/>
+    </b:includable>

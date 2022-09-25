@@ -1,0 +1,25 @@
+<b:includable id='customOpenGraphMetaData'>
+          <!-- Open Graph Meta Tags -->
+          <meta expr:content='data:blog.localeUnderscoreDelimited' property='og:locale'/>
+          <b:if cond='data:view.isHomepage'>
+          <meta content='website' property='og:type'/>
+          <b:elseif cond='data:view.isSingleItem'/>
+          <meta content='article' property='og:type'/>
+          <b:elseif cond='data:view.isMultipleItems and not data:view.isHomepage'/>
+          <meta content='object' property='og:type'/>
+          </b:if>
+          <meta expr:content='data:view.title.escaped' property='og:title'/>
+          <meta expr:content='data:view.description.escaped' property='og:description'/>
+          <meta expr:content='data:blog.title.escaped' property='og:site_name'/>
+          <meta expr:content='data:blog.url.canonical' property='og:url'/>
+          <b:tag cond='data:view.isMultipleItems and data:widgets.Blog.first.posts[0].featuredImage' expr:content='data:widgets.Blog.first.posts[0].featuredImage resizeImage 1600' name='meta' property='og:image'/>
+          <b:tag cond='data:view.featuredImage' expr:content='data:view.featuredImage resizeImage 1600' name='meta' property='og:image'/>
+          <!-- Twitter Meta Tags -->
+          <meta content='summary_large_image' name='twitter:card'/>
+          <meta expr:content='data:view.title.escaped' name='twitter:title'/>
+          <meta expr:content='data:view.description.escaped' name='twitter:description'/>
+          <meta expr:content='data:blog.url.canonical' name='twitter:domain'/>
+          <b:tag cond='data:view.isMultipleItems and data:widgets.Blog.first.posts[0].featuredImage' expr:content='data:widgets.Blog.first.posts[0].featuredImage resizeImage 1600' name='meta' property='twitter:image'/>
+          <b:tag cond='data:view.featuredImage' expr:content='data:view.featuredImage resizeImage 1600' name='meta' property='twitter:image'/>
+          </b:includable>
+        

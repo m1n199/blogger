@@ -1,0 +1,22 @@
+<b:includable id='main' var='this'>
+    <div class='wrapper'>
+    <b:class cond='!data:this.team' name='solo'/>
+    <b:comment>No title for single profiles. Default to &#39;Blog authors&#39; for team.</b:comment>
+    <b:with value='data:messages.blogAuthors' var='defaultTitle'>
+        <b:include cond='data:this.team' name='widget-title'/>
+    </b:with>
+    <b:include name='content'/>
+    </div>
+    </b:includable>
+
+
+<b:includable id='main' var='this'>
+    <b:include name='widget-title'/>
+    <b:include name='content'/>
+    </b:includable>
+
+
+
+
+
+       

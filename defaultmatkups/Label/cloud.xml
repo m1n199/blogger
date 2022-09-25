@@ -1,0 +1,24 @@
+<b:includable id='cloud'>
+    <b:include data='{ buttonClass: &quot;pill-button&quot;,
+                       items: data:this.labels,
+                       itemSet: &quot;labels&quot;,
+                       itemsMarkup: &quot;super.cloud&quot;}' 
+                name='extendableItems'/>
+    </b:includable>
+
+
+<b:includable id='cloud'>
+    <ul class='cloud-style'>
+        <b:loop values='data:labels' var='label'>
+            <li>
+                <a class='label-name btn' expr:href='data:label.url'>
+                    <data:label.name/>
+                    <b:if cond='data:this.showFreqNumbers'>
+                        <b:class name='has-count'/>
+                        <span class='label-count count-style'>(<data:label.count/>)</span>
+                        </b:if>
+                    </a>
+                </li>
+        </b:loop>
+        </ul>
+    </b:includable>

@@ -1,0 +1,5 @@
+<b:includable id='blogPostsTitle'>
+    <b:if cond='data:blog.jumpLinkMessage != &quot;{hide}&quot;'>
+    <div class='main-title-wrap blog1-title'><h3 class='title'><data:blog.jumpLinkMessage/></h3></div>
+    </b:if>
+    </b:includable>

@@ -1,0 +1,8 @@
+<b:includable id='userProfileText'>
+    <dd class='profile-textblock profile-snippet snippet-container r-snippet-container'>
+    <div class='snippet-item r-snippetized'>
+        <data:aboutme/>
+    </div>
+    <div class='snippet-fade r-snippet-fade hidden'/>
+    </dd>
+    </b:includable>

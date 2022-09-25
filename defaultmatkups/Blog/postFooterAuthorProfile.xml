@@ -1,0 +1,11 @@
+<b:includable id='postFooterAuthorProfile' var='post'>
+    <div class='about-author post-widget'>
+    <div class='author-avatar entry-avatar'>
+    <span class='avatar' expr:data-src='data:post.author.authorPhoto.image ? resizeImage(data:post.author.authorPhoto.image, 72, &quot;1:1&quot;) : &quot;https://1.bp.blogspot.com/-QN2lgvtYZco/YN3mUSryAVI/AAAAAAAAADs/KrR-etCcvUMcPl06jopTs9pzq59IAXhMQCLcBGAsYHQ/s72-c/avatar.jpg&quot;'/>
+    </div>
+    <div class='author-description flex-col'>
+    <h3 class='author-title'><b:tag cond='data:post.author.profileUrl' expr:alt='data:post.author.name' expr:href='data:post.author.profileUrl' name='a' rel='noopener noreferrer' target='_blank'><data:post.author.name/></b:tag></h3>
+    <p class='author-text excerpt'><data:post.author.aboutMe/></p>
+    </div>
+    </div>
+    </b:includable>

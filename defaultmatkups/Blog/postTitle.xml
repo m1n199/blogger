@@ -1,0 +1,9 @@
+<b:includable id='postTitle' var='post'>
+    <!-- Post Title Index and Item -->
+    <b:if cond='data:view.isMultipleItems'>
+    <h2 class='entry-title'><a expr:href='data:post.url.canonical' expr:title='data:post.title ? data:post.title : data:messages.noTitle' rel='bookmark'><b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/></a></h2>
+    </b:if>
+    <b:if cond='data:view.isSingleItem'>
+    <h1 class='entry-title'><b:eval expr='data:post.title ? data:post.title : data:messages.noTitle'/></h1>
+    </b:if>
+    </b:includable>

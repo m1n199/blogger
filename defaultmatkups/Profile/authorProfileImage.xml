@@ -1,0 +1,3 @@
+<b:includable id='authorProfileImage' var='this'>
+    <img class='profile-img' expr:alt='data:messages.myPhoto' expr:src='resizeImage(data:authorPhoto.image, 50, &quot;1:1&quot;)'/>
+    </b:includable>

@@ -1,0 +1,24 @@
+<b:includable id='postFooter' var='post'>
+    <div class='post-bottom'>
+    <div class='post-footer float-container'>
+        <b:include name='footerBylines'/>
+        <b:include cond='data:widget.type == &quot;Blog&quot;' data='post' name='postFooterAuthorProfile'/>
+    </div>
+    <b:if cond='data:view.isSingleItem'>
+        <b:include data='{ shareButtonClass: &quot;post-share-buttons-bottom invisible&quot;, overridden: true }' name='maybeAddShareButtons'/>
+    <b:else/>
+        <b:include data='post' name='postFooterJumpLink'/>
+    </b:if>
+    </div>
+    </b:includable>
+
+
+
+<b:includable id='postFooter' var='post'>
+    <!-- Post Footer Items -->
+    <b:tag class='post-footer flex-col' cond='data:post.author.aboutMe or (data:widgets.HTML any w =&gt; w.sectionId == &quot;x1c3a-related-posts&quot;)' name='footer'>
+    <b:include cond='data:post.author.aboutMe' data='post' name='postFooterAuthorProfile'/>
+    <b:include cond='data:widgets.HTML any w =&gt; w.sectionId == &quot;x1c3a-related-posts&quot;' data='post' name='relatedPosts'/>
+    </b:tag>
+    </b:includable>
+    

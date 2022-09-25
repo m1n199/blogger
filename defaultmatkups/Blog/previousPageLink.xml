@@ -1,0 +1,13 @@
+<b:includable id='previousPageLink'><b:comment>Don&#39;t show</b:comment></b:includable>
+<b:includable id='previousPageLink'>
+    <b:if cond='data:newerPageUrl'>
+    <a class='post-nav-link post-nav-newer-link' expr:href='data:newerPageUrl.canonical'>
+    <b:include data='{ message: &quot;prevPost&quot; }' name='theme-custom-lang'/>
+    </a>
+    <b:else/>
+    <span class='post-nav-link post-nav-newer-link'>
+    <b:include data='{ message: &quot;prevPost&quot; }' name='theme-custom-lang'/>
+    </span>
+    </b:if>
+    </b:includable>
+s

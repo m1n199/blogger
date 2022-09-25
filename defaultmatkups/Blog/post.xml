@@ -1,0 +1,10 @@
+<b:includable id='post' var='post'>
+    <!-- Index Posts -->
+    <b:if cond='data:view.isMultipleItems'>
+    <b:include data='post' name='indexPost'/>
+    </b:if>
+    <!-- Item Post -->
+    <b:if cond='data:view.isSingleItem'>
+    <b:include data='post' name='itemPost'/>
+    </b:if>
+    </b:includable>

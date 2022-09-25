@@ -1,0 +1,7 @@
+<b:includable id='teamProfileLink' var='this'>
+    <b:include name='profileImage'/>
+    <div class='profile-info'>
+    <a class='profile-name' expr:href='data:userUrl' rel='noopener nofollow' target='_blank'><data:display-name/></a>
+    <a class='profile-link' expr:href='data:userUrl' rel='noopener nofollow' target='_blank'><data:messages.showMore/></a>
+    </div>
+    </b:includable>

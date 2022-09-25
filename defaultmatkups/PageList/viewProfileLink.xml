@@ -1,0 +1,6 @@
+<b:includable id='viewProfileLink'>
+    <b:comment>Change link to &#39;visit profile&#39;</b:comment>
+    <a class='profile-link visit-profile pill-button' expr:href='data:userUrl' rel='author'>
+    <data:messages.visitProfile/>
+    </a>
+    </b:includable>

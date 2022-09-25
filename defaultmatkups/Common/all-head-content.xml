@@ -1,0 +1,62 @@
+<b:includable id='all-head-content'>
+    <meta expr:content='&quot;text/html; charset=&quot; + data:blog.encoding' http-equiv='Content-Type'/>
+    <meta content='width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes' name='viewport'/>
+    <!-- DNS Prefetch -->
+        <link href='//fonts.googleapis.com' rel='dns-prefetch'/>
+        <link href='//fonts.gstatic.com' rel='dns-prefetch'/>
+        <link href='//dnjs.cloudflare.com' rel='dns-prefetch'/>
+        <link href='//1.bp.blogspot.com' rel='dns-prefetch'/>
+        <link href='//2.bp.blogspot.com' rel='dns-prefetch'/>
+        <link href='//3.bp.blogspot.com' rel='dns-prefetch'/>
+        <link href='//4.bp.blogspot.com' rel='dns-prefetch'/>
+        <link href='//blogger.googleusercontent.com' rel='dns-prefetch'/>
+        <link href='//www.blogger.com' rel='dns-prefetch'/>
+    <!-- Site Info -->
+    <meta content='blogger' name='generator'/>
+    <title><data:view.title.escaped/></title>
+    <meta expr:content='data:view.description.escaped' name='description'/>
+    <link expr:href='data:view.url.canonical' rel='canonical'/>
+    <b:if cond='data:blog.adultContent'>
+    <meta content='adult' name='rating'/>
+    </b:if>
+    <link expr:href='data:blog.blogspotFaviconUrl' rel='icon' type='image/x-icon'/>
+    <meta expr:content='data:skin.vars.main_color' name='theme-color'/>
+    <b:include name='customOpenGraphMetaData'/>
+    <!-- Feed Links -->
+    <data:blog.feedLinks/><data:blog.meTag/>
+    <b:if cond='data:view.isHomepage'>
+    <!-- Schema Markup -->
+    <script type='application/ld+json'>{&quot;@context&quot;:&quot;http://schema.org&quot;,&quot;@type&quot;:&quot;WebSite&quot;,&quot;name&quot;:&quot;<data:view.title.escaped/>&quot;,&quot;url&quot;:&quot;<data:view.url.canonical/>&quot;,&quot;potentialAction&quot;:{&quot;@type&quot;:&quot;SearchAction&quot;,&quot;target&quot;:&quot;<data:view.url.canonical/>search?q={search_term_string}&quot;,&quot;query-input&quot;:&quot;required name=search_term_string&quot;}}</script>
+    </b:if>
+    <!-- Styles and Scripts -->
+    <b:tag href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css' name='link' rel='stylesheet'/>
+    <b:tag cond='data:blog.languageDirection == &quot;rtl&quot;' href='https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&amp;display=swap' name='link' rel='stylesheet'/>
+    </b:includable>
+
+
+
+<b:includable id='all-head-content'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'/>
+    <meta content='blogger' name='generator'/>
+    <meta expr:content='data:view.description.escaped' name='description'/>
+    <b:tag cond="data:blog.adultContent" expr:content='adult' expr:name="rating" name="meta" />
+    <!-- <b:if cond='data:blog.adultContent'>  <meta content='adult' name='rating'/>  </b:if> -->
+    <title><data:view.title.escaped/></title>
+    <!-- <meta expr:content='data:skin.vars.main_color' name='theme-color'/> -->
+    <!-- <b:include name='customOpenGraphMetaData'/> -->
+    <!-- Styles and Scripts -->
+    <b:tag href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css' name='link' rel='stylesheet'/>
+    <!-- DNS Prefetch -->
+        <link href='//fonts.googleapis.com' rel='dns-prefetch'/>
+        <link href='//fonts.gstatic.com' rel='dns-prefetch'/>
+        <link href='//dnjs.cloudflare.com' rel='dns-prefetch'/>
+        <link href='//1.bp.blogspot.com' rel='dns-prefetch'/>
+        <link href='//2.bp.blogspot.com' rel='dns-prefetch'/>
+        <link href='//3.bp.blogspot.com' rel='dns-prefetch'/>
+        <link href='//4.bp.blogspot.com' rel='dns-prefetch'/>
+        <link href='//blogger.googleusercontent.com' rel='dns-prefetch'/>
+        <link href='//www.blogger.com' rel='dns-prefetch'/>
+    </b:includable>
+
+
+

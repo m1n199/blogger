@@ -1,0 +1,18 @@
+<b:includable id='postBodySnippet' var='post'>
+    <div class='container post-body entry-content' expr:id='&quot;post-snippet-&quot; + data:post.id'>
+    <b:if cond='data:post.featuredImage'>
+        <div class='snippet-thumbnail'>
+        <b:include data='{                                     image: data:post.featuredImage,                                     imageSizes: [32, 64, 128, 256],                                     imageRatio: &quot;1:1&quot;,                                     sourceSizes: &quot;(max-width: 800px) 20vw, 128px&quot;                                  }' name='responsiveImage'/>
+        </div>
+    </b:if>
+    <b:include cond='data:post' data='post' name='postSnippet'/>
+    </div>
+    </b:includable>
+
+
+
+<b:includable id='postBodySnippet' var='post'>
+    <p class='entry-excerpt excerpt'>
+        <b:eval expr='data:post.snippets.long snippet { length: 88 }'/>
+        </p>
+    </b:includable>

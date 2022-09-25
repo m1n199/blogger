@@ -1,0 +1,19 @@
+<b:includable id='postLabels'>
+    <b:comment>We don&#39;t display labels on the home page.</b:comment>
+    <b:if cond='data:view.isSingleItem and data:widget.type == &quot;Blog&quot;'>
+    <b:include name='super.postLabels'/>
+    </b:if>
+    </b:includable>
+
+
+
+<b:includable id='postLabels' var='post'>
+    <b:if cond='data:post.labels'>
+    <div class='entry-labels'>
+    <b:if cond='data:allBylineItems.labels.label'><span class='labels-label btn'><data:allBylineItems.labels.label/></span></b:if>
+    <b:loop values='data:post.labels' var='label'>
+    <a class='label-link btn' expr:href='data:label.url' rel='tag'><data:label.name/></a>
+    </b:loop>
+    </div>
+    </b:if>
+    </b:includable>

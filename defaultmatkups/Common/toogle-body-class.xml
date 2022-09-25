@@ -1,0 +1,11 @@
+     <b:includable id='toggle-body-class'>
+          <b:class cond='data:view.isMobile' name='is-mobile'/>
+          <b:class cond='data:view.isSingleItem' name='is-single'/>
+          <b:class cond='data:view.isMultipleItems' name='is-multiple'/>
+          <b:class cond='data:view.isError' name='is-error'/>
+          <b:class cond='data:view.isPage' name='is-page'/>
+          <b:class cond='data:view.isPost' name='is-post'/>
+          <b:class cond='data:view.isHomepage' name='is-home'/>
+          <b:class cond='data:view.isArchive' name='is-Archive'/>
+          <b:class cond='data:view.isSearch and !data:view.isLabelSearch' name='search-view'/> 
+          </b:includable>

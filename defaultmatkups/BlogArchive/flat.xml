@@ -1,0 +1,23 @@
+<b:includable id='flat'>
+    <b:include data='{ buttonClass: &quot;pill-button&quot;, 
+                    items: data:this.data,
+                    itemSet: &quot;data&quot;,
+                    itemsMarkup: &quot;super.flat&quot;}' 
+                name='extendableItems'/>
+    </b:includable>
+
+<b:includable id='flat'>
+    <ul class='list-style'>
+        <b:loop values='data:data' var='i'>
+            <li>
+                <a class='archive-name' expr:href='data:i.url'>
+                    <b:if cond='data:i.post-count'>
+                        <b:class name='has-count'/>
+                        <span class='archive-count count-style'>(<data:i.post-count/>)</span>
+                        </b:if>
+                    <data:i.name/>
+                    </a>
+                </li>
+            </b:loop>
+        </ul>
+    </b:includable>

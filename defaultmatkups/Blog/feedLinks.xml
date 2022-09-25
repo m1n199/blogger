@@ -1,0 +1,3 @@
+<b:includable id='feedLinks'>
+    <b:comment>Don&#39;t show feed links.</b:comment>
+</b:includable>

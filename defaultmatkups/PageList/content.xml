@@ -1,0 +1,12 @@
+<b:includable id='content'>
+    <div class='widget-content'>
+        <b:include cond='data:widget.sectionId == &quot;page_list_top&quot;' name='overflowablePageList'/>
+        <b:include cond='data:widget.sectionId != &quot;page_list_top&quot;' name='pageList'/>
+        </div>
+    </b:includable>
+
+
+<b:includable id='content'>
+    <b:include name='pagelist-content'/>
+    </b:includable>
+

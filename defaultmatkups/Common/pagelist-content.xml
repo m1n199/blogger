@@ -1,0 +1,9 @@
+<b:includable id='pagelist-content'>
+    <div class='widget-content'>
+    <ul class='link-list list-style'>
+    <b:loop values='data:links' var='link'>
+    <li><a expr:href='data:link.href'><data:link.title/></a></li>
+    </b:loop>
+    </ul>
+    </div>
+    </b:includable>

@@ -1,0 +1,4 @@
+</b:includable>
+    <b:includable id='content' var='post'>
+    <b:include name='popular-content'/>
+    </b:includable>

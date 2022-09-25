@@ -1,0 +1,20 @@
+<b:includable id='relatedPosts' var='post'>
+    <!-- Related Posts -->
+    <div class='post-widget' id='related-wrap'>
+    <div class='main-title-wrap related-title'>
+    <b:with value='data:widgets.HTML filter (w =&gt; w.sectionId == &quot;x1c3a-related-posts&quot;) map (w =&gt; w.title)' var='pbtTitle'>
+    <h3 class='title'><b:eval expr='data:pbtTitle.first ? data:pbtTitle.first : data:messages.youMayLikeThesePosts'/></h3>
+    </b:with>
+    <a class='title-link' expr:href='data:post.labels ? data:post.labels.first.url : &quot;/search&quot;'><data:messages.viewAll/></a>
+    </div>
+    <div class='related-content'>
+    <b:if cond='data:post.labels'>
+    <div class='related-tag' expr:data-id='data:post.id' expr:data-label='data:post.labels.first.name'/>
+    <b:else/>
+    <div class='related-tag' data-label='recent' expr:data-id='data:post.id'/>
+    </b:if>
+    </div>
+    </div>
+    </b:includable>
+
+

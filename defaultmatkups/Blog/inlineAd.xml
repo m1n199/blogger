@@ -1,0 +1,7 @@
+<b:includable id='inlineAd' var='post'>
+    <div>
+    <b:class cond='data:post.adNumber + data:numDesktopAds lt data:maxNumAds' name='desktop-ad'/>
+    <b:class cond='data:post.adNumber + data:numMobileAds lt data:maxNumAds' name='mobile-ad'/>
+    <b:include data='post' name='super.inlineAd'/>
+    </div>
+    </b:includable>

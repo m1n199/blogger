@@ -1,0 +1,55 @@
+<b:includable id='image-content'>
+    <b:if cond='data:widget.sectionId == &quot;img-panel&quot;'>
+        <b:tag name='script' type='text/javascript'>
+            var noThumbnail = &quot;<b:eval expr='resizeImage(data:sourceUrl, 72, &quot;1:1&quot;)'/>&quot;;
+            </b:tag>
+    <b:elseif cond='data:widget.sectionId == &quot;header-nav&quot;'/>
+        <a class='logo' expr:href='data:blog.homepageUrl.canonical' rel='home'>
+        <img expr:alt='data:blog.title' expr:data-src='data:sourceUrl' expr:height='data:height' expr:src='data:sourceUrl' expr:title='data:blog.title' expr:width='data:width'/>
+        <b:tag cond='data:view.isMultipleItems' name='h1' id='h1-off'><data:blog.title/></b:tag>
+        </a>
+    <b:elseif cond='data:widget.sectionId == &quot;footer&quot;'/>
+        <a class='footer-logo custom-image' expr:href='data:blog.homepageUrl.canonical' rel='home'>
+        <img expr:alt='data:blog.title' expr:data-src='data:sourceUrl' expr:height='data:height' expr:id='data:widget.instanceId + &quot;_img&quot;' expr:src='data:sourceUrl' expr:width='data:width'/>
+        </a>
+        <b:if cond='data:caption'>
+            <div class='footer-info'>
+            <b:if cond='data:title'><h3 class='title'><data:title/></h3></b:if>
+            <b:if cond='data:caption'><p class='image-caption excerpt'><data:caption/></p></b:if>
+            </div>
+            </b:if>
+    <b:else/>
+        <div class='widget-content'>
+        <div class='custom-image'>
+        <b:tag cond='data:link' expr:href='data:link' name='a'>
+        <img expr:alt='data:blog.title' expr:id='data:widget.instanceId + &quot;_img&quot;' expr:src='data:sourceUrl'/>
+        </b:tag>
+        </div>
+        <b:if cond='data:caption'>
+            <p class='image-caption excerpt'><data:caption/></p>
+            </b:if>
+        </div>
+        </b:if>
+    </b:includable>
+
+
+        <b:includable id='logo-img'>
+          <a class='logo' expr:href='data:blog.homepageUrl.canonical' rel='home'>
+            <img expr:alt='data:blog.title' expr:data-src='data:sourceUrl' expr:height='data:height' expr:src='data:sourceUrl' expr:title='data:blog.title' expr:width='data:width'/>
+              <b:tag cond='!data:sourceUrl and data:title' id='h1-off' name='h1'><data:blog.title/></b:tag>
+          </a>
+          </b:includable>
+        <b:includable id='post-img'>
+          <div class='widget-content'>
+              <div class='custom-image'>
+                <b:tag cond='data:link' expr:href='data:link' name='a'>
+                  <img expr:alt='data:blog.title' expr:id='data:widget.instanceId + &quot;_img&quot;' expr:src='data:sourceUrl'/>
+                </b:tag>
+              </div>
+              <b:if cond='data:caption'>
+                <p class='image-caption excerpt'>
+                  <data:caption/>
+                </p>
+              </b:if>
+            </div>
+          </b:includable>

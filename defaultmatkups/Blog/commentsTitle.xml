@@ -1,0 +1,4 @@
+<b:includable id='commentsTitle'>
+    <!-- Comments Title -->
+    <div class='main-title-wrap comments-title'><b:class expr:name='data:this.messages.blogComment ? &quot;has-message&quot; : &quot;no-message&quot;'/><h3 class='title'><b:if cond='data:post.numberOfComments != 0'><b:if cond='data:allBylineItems.comments.label contains &quot;disqus&quot; or data:allBylineItems.comments.label contains &quot;facebook&quot;'><data:messages.postAComment/><b:else/><data:post.numberOfComments/> <data:messages.comments/></b:if><b:else/><data:messages.postAComment/></b:if></h3></div>
+    </b:includable>
