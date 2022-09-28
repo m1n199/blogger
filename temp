@@ -1,11 +1,22 @@
-        <b:includable id='all_head_content'>
-          <meta name='viewport' content='width=device-width, initial-scale=1'/>
-          <title><data:view.title.escaped/></title>
-          <b:include name='all-head-content' data='blog'/>
-          <b:if cond='(data:widgets.AdSense.first or data:blog.adsenseClientId) and not data:blog.adsenseAutoAds'>
-            <script async='async' src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'/>
-            </b:if>
-          <b:include data='blog' name='google-analytics'/>
-          <b:tag name="script" async='async' expr:src='https://www.gstatic.com/external_hosted/clipboardjs/clipboard.min.js'>
+        <b:widget id='LinkList1' locked='false' title='Header nav' type='LinkList' version='2' visible='true'>
+          <b:widget-settings>
+            <b:widget-setting name='shownum'>3</b:widget-setting>
+            <b:widget-setting name='sorting'>NONE</b:widget-setting>
+            <b:widget-setting name='text-1'>Videos</b:widget-setting>
+            <b:widget-setting name='link-1'>#</b:widget-setting>
+            <b:widget-setting name='text-0'>Tutorials</b:widget-setting>
+            <b:widget-setting name='link-2'>#</b:widget-setting>
+            <b:widget-setting name='link-0'>#</b:widget-setting>
+            <b:widget-setting name='text-2'>SiteMap</b:widget-setting>
+            </b:widget-settings>
+          <b:includable id='main'>
+            <b:include name='content' />
           </b:includable>
-        
+          <b:includable id='content'>
+              <ul class='nav-menu'>
+                <b:loop values='data:links' var='link'>
+                  <li><a expr:href='data:link.target'> <data:link.name /> </a></li>
+                  </b:loop>
+                </ul>
+          </b:includable>
+        </b:widget>
