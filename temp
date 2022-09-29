@@ -1,22 +1,40 @@
-        <b:widget id='LinkList1' locked='false' title='Header nav' type='LinkList' version='2' visible='true'>
-          <b:widget-settings>
-            <b:widget-setting name='shownum'>3</b:widget-setting>
-            <b:widget-setting name='sorting'>NONE</b:widget-setting>
-            <b:widget-setting name='text-1'>Videos</b:widget-setting>
-            <b:widget-setting name='link-1'>#</b:widget-setting>
-            <b:widget-setting name='text-0'>Tutorials</b:widget-setting>
-            <b:widget-setting name='link-2'>#</b:widget-setting>
-            <b:widget-setting name='link-0'>#</b:widget-setting>
-            <b:widget-setting name='text-2'>SiteMap</b:widget-setting>
-            </b:widget-settings>
-          <b:includable id='main'>
-            <b:include name='content' />
-          </b:includable>
-          <b:includable id='content'>
-              <ul class='nav-menu'>
-                <b:loop values='data:links' var='link'>
-                  <li><a expr:href='data:link.target'> <data:link.name /> </a></li>
-                  </b:loop>
-                </ul>
-          </b:includable>
-        </b:widget>
+ <b:section class="l-navbar" id="nav-bar">
+        <b:widget class="HTML">
+            <div>
+                <a class="nav_logo" href="#">
+                    <i class="bx bx-layer nav_logo-icon"></i>
+                    <span class="nav_logo-name">BBBootstrap</span>
+                </a>
+                <div class="nav_list">
+                    <a class="nav_link active" href="#">
+                        <i class="bx bx-grid-alt nav_icon"></i>
+                        <span class="nav_name">Dashboard</span>
+                    </a>
+                    <a class="nav_link" href="#">
+                        <i class="bx bx-user nav_icon"></i>
+                        <span class="nav_name">Users</span>
+                    </a>
+                    <a class="nav_link" href="#">
+                        <i class="bx bx-message-square-detail nav_icon"></i>
+                        <span class="nav_name">Messages</span>
+                    </a>
+                    <a class="nav_link" href="#">
+                        <i class="bx bx-bookmark nav_icon"></i>
+                        <span class="nav_name">Bookmark</span>
+                    </a>
+                    <a class="nav_link" href="#">
+                        <i class="bx bx-folder nav_icon"></i>
+                        <span class="nav_name">Files</span>
+                    </a>
+                    <a class="nav_link" href="#">
+                        <i class="bx bx-bar-chart-alt-2 nav_icon"></i>
+                        <span class="nav_name">Stats</span>
+                    </a>
+                </div>
+            </div>
+            <a class="nav_link" href="#">
+                <i class="bx bx-log-out nav_icon"></i>
+                <span class="nav_name">SignOut</span>
+            </a>
+        </nav>
+    </div>
