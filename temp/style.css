@@ -1,8 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
 
 :root {
-    /* --header-height: 3rem; */
-        --header-height: 3rem;
+    --header-height: 3rem;
     --nav-width: 68px;
     --first-color: #4723D9;
     --first-color-light: #AFA5D9;
@@ -23,7 +22,7 @@ body {
     margin: var(--header-height) 0 0 0;
     padding: 0 1rem;
     font-family: var(--body-font);
-    /* font-size: var(--normal-font-size); */
+    font-size: var(--normal-font-size);
     transition: .5s
 }
 
@@ -43,7 +42,7 @@ a {
     padding: 0 1rem;
     background-color: var(--white-color);
     z-index: var(--z-fixed);
-    transition: .5s
+    transition: .7s
 }
 
 .header_toggle {
@@ -73,7 +72,7 @@ a {
     height: 100vh;
     background-color: var(--first-color);
     padding: .5rem 1rem 0 0;
-    transition: .5s;
+    transition: .7s;
     z-index: var(--z-fixed);
     box-shadow: 12px 1px 0 #F7F6FB;
 }
@@ -149,6 +148,36 @@ a {
     height: 100vh
 }
 
+
+
+.skip-navigation {
+    display: none;
+    visibility: hidden;
+}
+
+header .Image .logo img {
+    max-height: 50px;
+    max-width: 223px
+}
+
+#content {
+    background: #828080;
+}
+
+.sidebar-content {
+    transition: .5s;
+    background: #c0c0c0;
+    position: absolute;
+    width: calc(3*var(--nav-width));
+    left: calc(var(--nav-width) + 12px);
+    padding: 0 0 0 5px;
+    z-index: 50;
+}
+
+.close-sidebar-content {
+    left: calc(-3*var(--nav-width) - 3px);
+}
+
 @media screen and (min-width: 768px) {
     body {
         margin: calc(var(--header-height) + 1rem) 0 0 0;
@@ -175,23 +204,15 @@ a {
     }
 
     .show {
-        width: calc(var(--nav-width) + 156px)
+        width: calc(var(--nav-width) + 136px)
     }
 
     .body-pd {
         padding-left: calc(var(--nav-width) + 188px)
     }
-}
 
-.skip-navigation {
-    display: none;
-    visibility: hidden;
-}
-
-header .Image .logo img {
-    max-height: 50px;
-    max-width: 223px
-}
-#content{
-    background: #828080;
+    .is-sidebar .sidebar-content {
+        /* width: calc(3*var(--nav-width)); */
+        left: calc(3*var(--nav-width) + 12px);
+    }
 }
