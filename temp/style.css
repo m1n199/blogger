@@ -8,7 +8,8 @@
     --white-color: #F7F6FB;
     --body-font: 'Nunito', sans-serif;
     --normal-font-size: 1rem;
-    --z-fixed: 100
+    --z-fixed: 100;
+    --z-sidebar-widget:20
 }
 
 *,
@@ -16,21 +17,22 @@
 ::after {
     box-sizing: border-box
 }
-
+body,html{
+    height: 100%;
+}
 body {
     position: relative;
-    margin: var(--header-height) 0 0 0;
-    padding: 0 1rem;
+    padding: var(--header-height) 1rem 0 1rem;
     font-family: var(--body-font);
     font-size: var(--normal-font-size);
-    transition: .5s
+    transition: .5s;
 }
 
 a {
     text-decoration: none
 }
-
-.header {
+/* HEADER */
+header {
     width: 100%;
     height: var(--header-height);
     position: fixed;
@@ -45,10 +47,23 @@ a {
     transition: .7s
 }
 
+.is-sidebar header {
+    padding-left: calc(var(--nav-width) + 1rem)
+}
+
 .header_toggle {
     color: var(--first-color);
     font-size: 1.5rem;
     cursor: pointer
+}
+
+/* menu-bars(bx-meny) using boxicons */
+#header-toggle.bx::before {
+    content: "\eb5f"
+}
+/* menu-cross (bx-x) using boxicons */
+.is-sidebar #header-toggle.bx::before {
+    content: "\ec8d"
 }
 
 .header_img {
@@ -63,8 +78,8 @@ a {
 .header_img img {
     width: 40px
 }
-
-.l-navbar {
+/* NABAR */
+#nav-bar {
     position: fixed;
     top: 0;
     left: -30%;
@@ -76,6 +91,9 @@ a {
     z-index: var(--z-fixed);
     box-shadow: 12px 1px 0 #F7F6FB;
 }
+.is-sidebar #nav-bar{
+    left: 0
+}
 
 .nav {
     height: 100%;
@@ -85,6 +103,7 @@ a {
     overflow: hidden
 }
 
+/* NAV LOGO */
 .nav_logo,
 .nav_link {
     display: grid;
@@ -107,7 +126,16 @@ a {
     color: var(--white-color);
     font-weight: 700
 }
-
+/* NAV List */
+.is-sidebarIcon .nav_list .nav_link:focus::before {
+    color: var(--white-color);
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 2px;
+    height: 32px;
+    background-color: var(--white-color)
+}
 .nav_link {
     position: relative;
     color: var(--first-color-light);
@@ -123,68 +151,58 @@ a {
     font-size: 1.25rem
 }
 
-.show {
-    left: 0
-}
-
-.body-pd {
-    padding-left: calc(var(--nav-width) + 1rem)
-}
-
-.active {
-    color: var(--white-color)
-}
-
-.active::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    width: 2px;
-    height: 32px;
-    background-color: var(--white-color)
-}
-
+/* CONTENT */
 .height-100 {
-    height: 100vh
-}
-
-
-
-.skip-navigation {
-    display: none;
-    visibility: hidden;
-}
-
-header .Image .logo img {
-    max-height: 50px;
-    max-width: 223px
-}
-
-#content {
-    background: #828080;
+    height: 100vh;
 }
 
 .sidebar-content {
     transition: .5s;
     background: #c0c0c0;
-    position: absolute;
+    position: fixed;
     width: calc(3*var(--nav-width));
-    left: calc(var(--nav-width) + 12px);
+    left: calc(-3*var(--nav-width) - 3px);
     padding: 0 0 0 5px;
     z-index: 50;
+    height: 100%;
 }
 
-.close-sidebar-content {
-    left: calc(-3*var(--nav-width) - 3px);
+.is-sidebar #content,
+.is-sidebarIcon #content{
+    background: #828080;
+}
+
+
+.is-sidebar.is-sidebarIcon .sidebar-content {
+    left: calc(var(--nav-width) + 12px);
+}
+.sidebar-content .widget{
+    margin:  0 0 0 -5px;
+    padding: 0 0 0 5px;
+    position: absolute;
+    z-index:50;
+    background: rgb(159, 158, 158);
+    height: 100%;
+    visibility: hidden;
+}
+
+.widget.display{
+    visibility: visible;
+}
+#HTML1{
+    background: rgb(240, 162, 162);
+}
+#HTML2{
+    background: #fff;
 }
 
 @media screen and (min-width: 768px) {
     body {
-        margin: calc(var(--header-height) + 1rem) 0 0 0;
+        padding: calc(var(--header-height) + 1rem) 0 0 0;
         padding-left: calc(var(--nav-width) + 2rem)
     }
 
-    .header {
+    header {
         height: calc(var(--header-height) + 1rem);
         padding: 0 2rem 0 calc(var(--nav-width) + 2rem)
     }
@@ -198,21 +216,26 @@ header .Image .logo img {
         width: 45px
     }
 
-    .l-navbar {
+    #nav-bar {
         left: 0;
         padding: 1rem 1rem 0 0
     }
 
-    .show {
+    .is-sidebar #nav-bar {
         width: calc(var(--nav-width) + 136px)
     }
 
-    .body-pd {
+    .is-sidebar header {
         padding-left: calc(var(--nav-width) + 188px)
     }
 
-    .is-sidebar .sidebar-content {
+    .is-sidebarIcon .sidebar-content {
+        left: calc(var(--nav-width) + 12px);
+    }
+
+    .is-sidebar.is-sidebarIcon .sidebar-content{
         /* width: calc(3*var(--nav-width)); */
         left: calc(3*var(--nav-width) + 12px);
     }
+    
 }
