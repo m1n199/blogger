@@ -1,8 +1,0 @@
-<b:includable id='postFooterJumpLink'>
-    <b:comment>Ripple, and show &#39;keep reading&#39; as the default.</b:comment>
-    <div class='jump-link flat-button ripple'>
-    <a expr:href='data:post.hasJumpLink ? data:post.url fragment &quot;more&quot; : data:post.url' expr:title='data:post.title'>
-        <data:blog.jumpLinkMessage/>
-    </a>
-    </div>
-</b:includable>

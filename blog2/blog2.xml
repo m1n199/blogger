@@ -3373,21 +3373,21 @@
                 <b:widget-setting name='useMostRecentPost'>true</b:widget-setting>
                 </b:widget-settings>
               <b:includable id='main' var='this'>
-              <b:include name='widget-title'/>
-              <div class='widget-content'>
-              <b:loop values='data:posts' var='post'>
-              <b:include data='post' name='content'/>
-              </b:loop>
-              </div>
-              </b:includable>
+                <b:include name='widget-title'/>
+                <div class='widget-content'>
+                <b:loop values='data:posts' var='post'>
+                <b:include data='post' name='content'/>
+                </b:loop>
+                </div>
+                </b:includable>
               <b:includable id='blogThisShare'><b:comment>Replaced</b:comment>  </b:includable>
               <b:includable id='bylineByName' var='byline'><b:comment>Replaced</b:comment>  </b:includable>
               <b:includable id='bylineRegion' var='regionItems'><b:comment>Replaced</b:comment>  </b:includable>
               <b:includable id='commentsLink'><b:comment>Replaced</b:comment>  </b:includable>
               <b:includable id='commentsLinkIframe'><b:comment>Replaced</b:comment>  </b:includable>
               <b:includable id='content' var='post'>
-              <b:include name='featured-content'/>
-              </b:includable>
+                <b:include name='featured-content'/>
+                </b:includable>
               <b:includable id='emailPostIcon'><b:comment>Replaced</b:comment>  </b:includable>
               <b:includable id='facebookShare'><b:comment>Replaced</b:comment>  </b:includable>
               <b:includable id='footerBylines'><b:comment>Replaced</b:comment>  </b:includable>

@@ -1,3 +1,0 @@
-<b:includable id='postJumpLink'>
-    <b:comment>Overridden, and migrated to postFooter. Called as postFooterJumpLink.</b:comment>
-</b:includable>

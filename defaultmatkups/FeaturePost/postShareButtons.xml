@@ -1,3 +1,0 @@
-<b:includable id='postShareButtons' var='post'>
-    <b:comment>We call super.postShareButtons from the migrated positions.</b:comment>
-</b:includable>

@@ -1,0 +1,252 @@
+<b:defaultmarkup type='FeaturedPost'>
+  <b:includable id='snippetedPostContent'>
+    <b:comment>Re-order the thumbnail before the snippet, add &#39;Keep reading&#39; link.</b:comment>
+    <b:include cond='data:this.postDisplay.showTitle' name='snippetedPostTitle'/>
+    <b:include name='headerByline'/>
+    <b:include cond='data:this.postDisplay.showFeaturedImage and data:post.featuredImage' data='post' name='snippetedPostThumbnail'/>
+    <b:include cond='data:this.postDisplay.showSnippet' data='post' name='postSnippet'/>
+    <b:include data='post' name='postFooter'/>
+    </b:includable>
+  <b:includable id='snippetedPostThumbnail'>
+    <div class='snippet-thumbnail'>
+      <b:with value='data:post.featuredImage.isYoutube ? resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl, 945, &quot;945:600&quot;) : &quot;&quot;' var='highRes'>
+        <b:include  data='{image: data:post.featuredImage,
+                           imageSizes: [256, 512, 945, 1684], 
+                           imageRatio: &quot;945:600&quot;, 
+                           sourceSizes: &quot;(min-width: 954px) 842px, 
+                           (min-width: 801px) calc(100vw - 112px), calc(100vw - 64px)&quot;, 
+                           enhancedSourceset: data:highRes }' 
+                    name='responsiveImage'/>
+      </b:with>
+    </div>
+    </b:includable>
+  </b:defaultmarkup>
+
+<b:defaultmarkup type='Blog,FeaturedPost,PopularPosts'>
+  <b:includable id='commentsLink'>
+    <a class='comment-link' expr:href='data:post.commentsUrl' expr:onclick='data:post.commentsUrlOnclick'>
+      <b:include data='{ iconClass: &quot;touch-icon&quot; }' name='commentIcon'/>
+      <span class='num_comments'>
+        <b:if cond='data:post.numberOfComments &gt; 0'>
+          <b:message name='messages.numberOfComments'>
+            <b:param expr:value='data:post.numberOfComments' name='numComments'/>
+          </b:message>
+        <b:else/>
+          <data:messages.postAComment/>
+        </b:if>
+      </span>
+    </a>
+    </b:includable>
+  <b:includable id='snippetedPostByline'>
+    <b:include name='headerByline'/>
+    </b:includable>
+  <b:includable id='postLabels'>
+      <b:comment>We don&#39;t display labels on the home page.</b:comment>
+      <b:if cond='data:view.isSingleItem and data:widget.type == &quot;Blog&quot;'>
+        <b:include name='super.postLabels'/>
+        </b:if>
+    </b:includable>
+  <b:includable id='postShareButtons' var='post'>
+    <b:comment>We call super.postShareButtons from the migrated positions.</b:comment>
+    </b:includable>
+  <b:includable id='postJumpLink'>
+    <b:comment>Overridden, and migrated to postFooter. Called as postFooterJumpLink.</b:comment>
+      </b:includable>
+  <b:includable id='postFooterJumpLink'>
+    <b:comment>Ripple, and show &#39;keep reading&#39; as the default.</b:comment>
+    <div class='jump-link flat-button ripple'>
+      <a expr:href='data:post.hasJumpLink ? data:post.url fragment &quot;more&quot; : data:post.url' expr:title='data:post.title'>
+        <data:blog.jumpLinkMessage/>
+      </a>
+    </div>
+      </b:includable>
+  <b:includable id='postFooter' var='post'>
+    <div class='post-bottom'>
+      <div class='post-footer float-container'>
+        <b:include name='footerBylines'/>
+        <b:include cond='data:widget.type == &quot;Blog&quot;' data='post' name='postFooterAuthorProfile'/>
+      </div>
+      <b:if cond='data:view.isSingleItem'>
+          <b:include data='{ shareButtonClass: &quot;post-share-buttons-bottom invisible&quot;, overridden: true }' name='maybeAddShareButtons'/>
+      <b:else/>
+        <b:include data='post' name='postFooterJumpLink'/>
+      </b:if>
+    </div>
+    </b:includable>
+  </b:defaultmarkup>
+
+
+<b:defaultmarkup type='Blog,FeaturedPost'>
+  <b:includable id='headerByline'>
+    <b:include cond='data:view.isMultipleItems or data:widgets.Blog.first.headerByline.items.share' data='{ shareButtonClass: &quot;post-share-buttons-top&quot;, overridden: true }' name='maybeAddShareButtons'/>
+    <b:include name='super.headerByline'/>
+    </b:includable>
+  </b:defaultmarkup>
+
+        
+
+
+
+
+<b:includable id='main' var='this'>
+  <b:include name='widget-title'/>
+  <div class='widget-content'>
+    <b:include name='snippetedPosts'/>
+    </div>
+  </b:includable>
+  <b:includable id='snippetedPosts'>
+  <div role='feed'>
+    < !-- Don't render the post that we' re currently already looking at. -->
+      <b:loop values='data:posts filter (p =&gt; p.id != data:view.postId)' var='post'>
+        <article class='post' role='article'>
+          <b:include name='snippetedPostContent' />
+        </article>
+      </b:loop>
+  </div>
+  </b:includable>
+<b:includable id='snippetedPostContent'>
+  <b:comment>Re-order the thumbnail before the snippet, add &#39;Keep reading&#39;link.</b:comment>
+  <b:include cond='data:this.postDisplay.showTitle' name='snippetedPostTitle' />
+  <b:include name='headerByline' />
+  <b:include cond='data:this.postDisplay.showFeaturedImage and data:post.featuredImage' data='post' name='snippetedPostThumbnail' />
+  <comment>postSnippet is already defined includable can't be Changed</comment>
+  <b:include cond='data:this.postDisplay.showSnippet' data='post' name='postSnippet' />
+  <b:include data='post' name='postFooter' />
+  </b:includable>
+<b:includable id='snippetedPostTitle'>
+  <b:if cond='data:post.title != &quot;&quot;'> <h3 class='post-title'><a expr:href='data:post.url'>  <data:post.title />  </a></h3> </b:if>
+  </b:includable>
+<b:includable id='headerByline'>
+  <b:include cond='data:view.isMultipleItems or data:widgets.Blog.first.headerByline.items.share'
+    data='{ shareButtonClass: &quot;post-share-buttons-top&quot;, overridden: true }'
+    name='maybeAddShareButtons' />
+  <b:include name='super.headerByline' />
+  </b:includable>
+<b:includable id='snippetedPostThumbnail'>
+  <div class='snippet-thumbnail'>
+    <b:with value='data:post.featuredImage.isYoutube ? 
+                    resizeImage(data:post.featuredImage.youtubeMaxResDefaultUrl, 945, &quot;945:600&quot;)
+                    : &quot;&quot;' var='highRes'>
+        <b:include data='{ image: data:post.featuredImage, 
+                           imageSizes: [256, 512, 945, 1684],
+                           imageRatio: &quot;945:600&quot;,
+                           sourceSizes: &quot;(min-width: 954px) 842px, 
+                                              (min-width: 801px) calc(100vw - 112px), 
+                                              calc(100vw - 64px)&quot;,
+                            enhancedSourceset: data:highRes }'
+                    name='responsiveImage' />
+        <comment>responsiveImage inchageable includable</comment>
+    </b:with>
+  </div>
+  </b:includable>
+<b:includable id='postFooter' var='post'>
+  <div class='post-bottom'>
+    <div class='post-footer float-container'>
+      <b:include name='footerBylines' />
+      <comment>link of blogger profile ... must be replaced next time</comment>
+      <b:include cond='data:widget.type == &quot;Blog&quot;' data='post' name='postFooterAuthorProfile' />
+    </div>
+    <b:if cond='data:view.isSingleItem'>
+      <comment>total garbage must be replaced next time</comment>
+      <b:include  data='{ shareButtonClass: &quot;post-share-buttons-bottom invisible&quot;, overridden: true }' name='maybeAddShareButtons' />
+      <b:else />
+      <b:include data='post' name='postFooterJumpLink' />
+    </b:if>
+  </div>
+  </b:includable>  
+<b:includable id='footerBylines'>
+  <b:if cond='data:widgets.Blog.first.footerBylines'>
+    <b:loop index='i' values='data:widgets.Blog.first.footerBylines' var='region'>
+      <b:if cond='not data:region.items.empty'>
+        <div expr:class='&quot;post-footer-line post-footer-line-&quot; + (data:i + 1)'>
+          <b:with value='&quot;footer-&quot; + (data:i + 1)' var='regionName'>
+            <b:include data='region.items' name='bylineRegion' />
+          </b:with>
+        </div>
+      </b:if>
+    </b:loop>
+  </b:if>
+  </b:includable>
+<b:includable id='postFooterJumpLink'>
+  <b:comment>Ripple,    and show &#39;    keep reading&#39;    as the default.</b:comment>
+  <div class='jump-link flat-button ripple'>
+  <a expr:href='data:post.hasJumpLink ? data:post.url fragment &quot;more&quot; : data:post.url' expr:title='data:post.title'><data:blog.jumpLinkMessage /></a></div>
+  </b:includable>
+<b:includable id='bylineRegion' var='regionItems'>
+  <b:loop values='data:regionItems' var='byline'>
+    <b:include data='byline' name='bylineByName' />
+  </b:loop>
+  </b:includable>
+<b:includable id='bylineByName' var='byline'>
+  <b:switch var='data:byline.name'>
+    <b:case value='share' />
+    <b:include cond='data:post.shareUrl' name='postShareButtons' />
+    <b:case value='comments' />
+    <b:include cond='data:post.allowComments' name='postCommentsLink' />
+    <b:case value='location' />
+    <b:include cond='data:post.location' name='postLocation' />
+    <b:case value='timestamp' />
+    <b:include cond='not data:view.isPage' name='postTimestamp' />
+    <b:case value='author' />
+    <b:include name='postAuthor' />
+    <b:case value='labels' />
+    <b:include cond='data:post.labels' name='postLabels' />
+    <b:case value='icons' />
+    <b:include cond='data:post.emailPostUrl' name='emailPostIcon' />
+  </b:switch>
+  </b:includable>
+<b:includable id='postShareButtons' var='post'>
+  <b:comment>We call super.postShareButtons from the migrated positions.</b:comment>
+  </b:includable>
+<b:includable id='postCommentsLink'>
+  <span class='byline post-comment-link container'>
+    <b:include cond='data:post.commentSource != 1' name='commentsLink' />
+    </span>
+  </b:includable>
+<b:includable id='postLocation'>
+  <span class='byline post-location'> 
+    <data:byline.label /> <a expr:href='data:post.location.mapsUrl' target='_blank'> <data:post.location.name />  </a>
+    </span>
+  </b:includable>
+<b:includable id='postTimestamp'>
+  <span class='byline post-timestamp'>
+    <data:byline.label />
+    <b:if cond='data:post.url'>
+      <meta expr:content='data:post.url.canonical' />
+      <a class='timestamp-link' expr:href='data:post.url' rel='bookmark' title='permanent link'>
+        <time class='published' expr:datetime='data:post.date.iso8601' expr:title='data:post.date.iso8601'> <data:post.date /> </time>
+        </a>
+      </b:if>
+    </span>
+  </b:includable>
+<b:includable id='postLabels'>
+  <b:comment>We don&#39;t display labels on the home page.</b:comment>
+  <b:if cond='data:view.isSingleItem and data:widget.type == &quot;Blog&quot;'>
+    <b:include name='super.postLabels' />
+    </b:if>
+  </b:includable>
+<b:includable id='emailPostIcon'>
+  <span class='byline post-icons'>
+      <comment> email post links </comment>
+      <span class='item-action'>
+        <a expr:href='data:post.emailPostUrl'  expr:title='data:messages.emailPost'>
+            <comment> emailIcon unchangeable includable ... </comment>
+            <b:include data='{ iconClass: &quot;touch-icon sharing-icon&quot; }' name='emailIcon' />
+          </a>
+        </span>
+      </span>
+  </b:includable>
+<b:includable id='commentsLink'>
+  <a class='comment-link' expr:href='data:post.commentsUrl' expr:onclick='data:post.commentsUrlOnclick'>
+    <b:include data='{ iconClass: &quot;touch-icon&quot; }' name='commentIcon' />
+    <span class='num_comments'>
+      <b:if cond='data:post.numberOfComments &gt; 0'>
+        <b:message name='messages.numberOfComments'>
+          <b:param expr:value='data:post.numberOfComments' name='numComments' />
+          </b:message>
+          <b:else />
+        <data:messages.postAComment />
+        </b:if>
+      </span>
+    </a>
+  </b:includable>
